@@ -1,7 +1,8 @@
-package com.example.bookmark
+package com.example.bookmark.view.features.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.bookmark.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
