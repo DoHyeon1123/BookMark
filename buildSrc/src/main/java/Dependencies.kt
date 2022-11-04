@@ -5,6 +5,8 @@ object Kotlin {
 }
 
 object AndroidX {
+    const val ACTIVITY_KTX = "androidx.activity:activity-ktx:1.1.0${Versions.}"
+    const val FRAGMENT_KTX ="androidx.fragment:fragment-ktx:1.2.5${}"
     const val CORE_KTX = "androidx.core:core-ktx:${Versions.CORE_KTX}"
     const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
 
