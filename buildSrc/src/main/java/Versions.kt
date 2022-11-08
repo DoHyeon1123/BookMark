@@ -1,8 +1,6 @@
 object Versions {
     const val KOTLINX_COROUTINES = "1.6.0"
-    //const val BUILD_GRADLE = "4.2.1"
     const val COMPILE_SDK_VERSION = 32
-    //const val BUILD_TOOLS_VERSION = "30.0.3"
     const val MIN_SDK_VERSION = 26
     const val TARGET_SDK_VERSION = 32
     const val VERSION_CODE = 1
@@ -13,6 +11,8 @@ object Versions {
 
     const val GOOGLE_GMS = "4.3.14"
 
+    const val ACTIVITY_KTX = "1.1.0"
+    const val FRAGMENT_KTX = "1.2.5"
     const val CORE_KTX = "1.8.0"
     const val APP_COMPAT = "1.4.2"
     const val ROOM = "2.4.3"
