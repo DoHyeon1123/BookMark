@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.bookmark.view.features.list.ListViewModel" />
+            type="com.example.bookmark.presentation.features.list.ListViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

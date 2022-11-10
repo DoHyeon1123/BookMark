@@ -1,4 +1,4 @@
-package com.example.bookmark.view.util
+package com.example.bookmark.presentation.util
 
 sealed class Resource<T>(val data: T? = null, val message: String? = null) {
     class Success<T>(data: T) : Resource<T>(data)

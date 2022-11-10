@@ -2,12 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".view.features.main.MainActivity">
+    tools:context=".presentation.features.main.MainActivity">
 
     <data>
         <variable
             name="vm"
-            type="com.example.bookmark.view.features.main.MainViewModel" />
+            type="com.example.bookmark.presentation.features.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

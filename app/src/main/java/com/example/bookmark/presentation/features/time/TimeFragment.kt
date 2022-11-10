@@ -1,9 +1,8 @@
-package com.example.bookmark.view.features.time
+package com.example.bookmark.presentation.features.time
 
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.example.bookmark.databinding.FragmentTimeBinding
-import com.example.bookmark.view.features.base.BaseFragment
+import com.example.bookmark.presentation.features.base.BaseFragment
 
 class TimeFragment : BaseFragment<FragmentTimeBinding,TimeViewModel>() {
     override val viewModel: TimeViewModel by viewModels()

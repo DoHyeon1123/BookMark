@@ -1,11 +1,10 @@
-package com.example.bookmark.view.features.base
+package com.example.bookmark.presentation.features.base
 
-import androidx.fragment.app.Fragment
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.bookmark.view.util.Resource
+import com.example.bookmark.presentation.util.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.onEach
 

@@ -1,4 +1,4 @@
-package com.example.bookmark.view.features.base
+package com.example.bookmark.presentation.features.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.example.bookmark.R
-import com.example.bookmark.view.features.main.MainActivity
+import com.example.bookmark.presentation.features.main.MainActivity
 import java.lang.reflect.ParameterizedType
 import java.util.*
 import com.example.bookmark.BR

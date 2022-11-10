@@ -44,6 +44,10 @@ dependencies {
     implementation(AndroidX.APP_COMPAT)
     implementation(Google.MATERIAL)
 
+    implementation(AndroidX.ROOM_KTX)
+    implementation(AndroidX.ROOM_COMPILER)
+    implementation(AndroidX.ROOM_RUNTIME)
+
     testImplementation(UnitTest.JUNIT)
     androidTestImplementation(AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(AndroidTest.ESPRESSO_CORE)

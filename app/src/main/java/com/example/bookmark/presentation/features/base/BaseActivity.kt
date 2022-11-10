@@ -1,4 +1,4 @@
-package com.example.bookmark.view.features.base
+package com.example.bookmark.presentation.features.base
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

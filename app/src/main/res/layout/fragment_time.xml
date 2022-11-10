@@ -6,7 +6,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.bookmark.view.features.time.TimeViewModel" />
+            type="com.example.bookmark.presentation.features.time.TimeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
