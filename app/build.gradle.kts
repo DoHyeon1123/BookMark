@@ -44,6 +44,9 @@ dependencies {
     implementation(AndroidX.APP_COMPAT)
     implementation(Google.MATERIAL)
 
+    implementation(Libraries.RETROFIT)
+    implementation(Libraries.RETROFIT_CONVERTER_GSON)
+
     implementation(AndroidX.ROOM_KTX)
     implementation(AndroidX.ROOM_COMPILER)
     implementation(AndroidX.ROOM_RUNTIME)
