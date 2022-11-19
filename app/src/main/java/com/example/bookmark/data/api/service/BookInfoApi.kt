@@ -5,5 +5,5 @@ import retrofit2.http.GET
 
 interface BookInfoApi {
     @GET("/v3/search/book")
-    fun searchBookInfo() 
+    fun searchBookInfo()
 }
