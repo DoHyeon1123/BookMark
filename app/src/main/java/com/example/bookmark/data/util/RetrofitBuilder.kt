@@ -1,6 +1,6 @@
 package com.example.bookmark.data.util
 
-import com.example.bookmark.data.model.BookInfo
+import com.example.bookmark.data.model.book.BookInfo
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
