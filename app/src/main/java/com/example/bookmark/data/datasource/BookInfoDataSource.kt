@@ -1,7 +1,6 @@
 package com.example.bookmark.data.datasource
 
 import com.example.bookmark.data.api.remote.BookInfoRemote
-import com.example.bookmark.data.db.cache.BookInfoCache
 import com.example.bookmark.data.model.book.BookInfo
 
 class BookInfoDataSource constructor(
