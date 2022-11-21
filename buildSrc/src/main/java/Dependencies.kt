@@ -1,6 +1,4 @@
 object Kotlin {
-    const val COROUTINES_CORE = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.KOTLINX_COROUTINES}"
-    const val COROUTINES_ANDROID = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.KOTLINX_COROUTINES}"
     const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}"
 }
 
@@ -63,13 +61,5 @@ object AndroidTest {
 
 object Android {
     const val ANDROID_BUILD_TOOL = "com.android.tools.build:gradle:${Versions.ANDROID_BUILD_TOOL}"
-}
-
-object NaverMap {
-    const val NAVER_MAP = "com.naver.maps:map-sdk:${Versions.NAVER_MAP}"
-}
-
-object Firebase {
-    const val ANALYTICS = "com.google.firebase:firebase-analytics:${Versions.ANALYTICS}"
 }
 

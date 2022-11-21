@@ -23,8 +23,6 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
 
     protected abstract fun observerViewModel()
 
-    protected open val hasBottomNav: Boolean = false
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,14 +34,6 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
             container, false
         )!!
         return mBinding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        this.savedInstanceState = savedInstanceState
-        setUp()
-        observerViewModel()
-        (activity as? MainActivity)?.setNavVisible(!hasBottomNav)
     }
 
     @LayoutRes

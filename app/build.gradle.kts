@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.ir.backend.js.compile
+
 plugins {
     id(Plugins.androidApplication)
     id(Plugins.kotlinAndroid)
@@ -7,7 +9,6 @@ plugins {
 
 android {
     compileSdk = Versions.COMPILE_SDK_VERSION
-
     defaultConfig {
         applicationId  = "com.example.bookmark"
         minSdk = Versions.MIN_SDK_VERSION
@@ -27,6 +28,7 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
+
     }
     kotlinOptions {
         jvmTarget = Versions.JVM_TARGET
@@ -48,7 +50,7 @@ dependencies {
     implementation(Libraries.RETROFIT_CONVERTER_GSON)
 
     implementation(AndroidX.ROOM_KTX)
-    implementation(AndroidX.ROOM_COMPILER)
+    kapt(AndroidX.ROOM_COMPILER)
     implementation(AndroidX.ROOM_RUNTIME)
 
     testImplementation(UnitTest.JUNIT)
