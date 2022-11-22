@@ -53,6 +53,10 @@ dependencies {
     kapt(AndroidX.ROOM_COMPILER)
     implementation(AndroidX.ROOM_RUNTIME)
 
+    implementation(AndroidX.NAVIGATION)
+    implementation(AndroidX.NAVIGATION_SAFE_ARGS)
+    implementation(AndroidX.NAVIGATION_UI_KTX)
+
     testImplementation(UnitTest.JUNIT)
     androidTestImplementation(AndroidTest.ANDROID_JUNIT)
     androidTestImplementation(AndroidTest.ESPRESSO_CORE)
