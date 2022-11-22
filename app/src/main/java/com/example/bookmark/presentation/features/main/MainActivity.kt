@@ -20,4 +20,4 @@ class MainActivity : BaseActivity<ActivityMainBinding,MainViewModel>(){
         NavigationUI.setupWithNavController(mBinding.navBar, findNavController(R.id.nav_host_fragment_container))
     }
 
-}
+} 

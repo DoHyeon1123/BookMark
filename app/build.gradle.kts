@@ -54,7 +54,7 @@ dependencies {
     implementation(AndroidX.ROOM_RUNTIME)
 
     implementation(AndroidX.NAVIGATION)
-    implementation(AndroidX.NAVIGATION_SAFE_ARGS)
+    //implementation(AndroidX.NAVIGATION_SAFE_ARGS)
     implementation(AndroidX.NAVIGATION_UI_KTX)
 
     testImplementation(UnitTest.JUNIT)
