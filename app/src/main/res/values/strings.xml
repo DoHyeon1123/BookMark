@@ -3,4 +3,5 @@
     <string name="title_check">확인</string>
     <string name="title_home">홈</string>
     <string name="title_library">책장</string>
+    <string name="text_search">검색...</string>
 </resources>
