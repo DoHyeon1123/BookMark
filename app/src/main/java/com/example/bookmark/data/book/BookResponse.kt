@@ -1,6 +1,6 @@
 package com.example.bookmark.data.book
 
-data class BookInfo(
+data class BookResponse(
     val meta : Meta,
-    val documents : Documents
+    val documents : List<Document>
 )

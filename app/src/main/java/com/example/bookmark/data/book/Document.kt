@@ -2,7 +2,7 @@ package com.example.bookmark.data.book
 
 import java.security.AuthProvider
 
-data class Documents(
+data class Document(
     val authors : List<String>,
     val contents : String,
     val datetime : String,
