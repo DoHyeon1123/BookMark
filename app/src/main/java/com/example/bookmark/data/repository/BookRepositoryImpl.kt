@@ -1,14 +1,12 @@
 package com.example.bookmark.data.repository
 
+import com.example.bookmark.data.datasource.BookInfoDataSource
 import com.example.bookmark.data.db.BookEntity
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.model.Comment
 import com.example.bookmark.domain.repository.BookRepository
 
-class BookRepositoryImpl : BookRepository {
-    override fun getBooks(): List<Book> {
-        TODO("Not yet implemented")
-    }
+class BookRepositoryImpl(override val dataSource: BookInfoDataSource) : BookRepository {
 
     override fun searchBooks(keyWord: String): List<Book> {
         TODO("Not yet implemented")
@@ -31,6 +29,10 @@ class BookRepositoryImpl : BookRepository {
     }
 
     override fun deleteBookInLibrary(id: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getComment(bookId: String) {
         TODO("Not yet implemented")
     }
 

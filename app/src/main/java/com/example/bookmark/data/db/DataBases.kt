@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
 import com.example.bookmark.data.db.cache.BookInfoCache
 
 class DataBases {
-    @Database(entities = [BookEntity::class], version = 1,exportSchema = false)//version은 구조 변경 시 구버전과 구분할 수 있도록 해준다.
+    @Database(entities = [BookEntity::class, CommentEntity::class], version = 2,exportSchema = false)//version은 구조 변경 시 구버전과 구분할 수 있도록 해준다.
 
     abstract class bookMarkDatabase: RoomDatabase() {
         //RoomDatabase()를 상속받는 DataBase 추상 클래스를 작성한다.

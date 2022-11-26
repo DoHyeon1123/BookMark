@@ -3,27 +3,68 @@ package com.example.bookmark.data.datasource
 import com.example.bookmark.data.api.remote.BookInfoRemote
 import com.example.bookmark.data.db.BookEntity
 import com.example.bookmark.data.db.cache.BookInfoCache
-import com.example.bookmark.data.book.BookResponse
 import com.example.bookmark.data.book.Document
+import com.example.bookmark.domain.model.Book
+import com.example.bookmark.domain.model.Comment
 
 class BookInfoDataSource constructor(
     private val remote : BookInfoRemote,
     private val cache : BookInfoCache
 ){
-    fun searchBookInfo(query : String): BookResponse {
-        return remote.searchBookInfo(query)
+    private fun mapDocumentToBook(list : List<Document>) : List<Book>{
+        val newList : MutableList<Book> = listOf<Book>() as MutableList<Book>
+        list.map {
+            newList.add(Book(
+                title = it.title,
+                image = it.thumbnail,
+                author = it.authors.toString(),
+                content = it.contents,
+                url = it.url,
+                id = it.isbn
+            )
+            )
+        }
+        return newList
     }
-    fun insertBookInfo(book : Document){
-        cache.insertBookInfo(
-            book.title,
-            book.thumbnail,
-            book.contents,
-            book.url,
-            book.authors.toString()
 
+    fun searchBooks(query : String): List<Book>{
+        return mapDocumentToBook(remote.searchBookInfo(query).documents)
+    }
+    fun addBookInLibrary(info : Book){
+        cache.insertBookInfo(
+            info.id,
+            info.title,
+            info.image,
+            info.url,
+            info.content,
+            info.author
         )
     }
-    fun getAllBookInfo():List<BookEntity>{
-        return cache.getAllBookInfo()
+    fun getBooksInLibrary():List<BookEntity>{
+        return cache.selectAllBooks()
+    }
+
+    fun getBookInLibrary(id : String):BookEntity {
+        return cache.selectBook(id)
+    }
+
+    fun updateBookInLibrary(info: Book) {
+        TODO("Not yet implemented")
+    }
+
+    fun deleteBookInLibrary(id: String) {
+        TODO("Not yet implemented")
+    }
+
+    fun addComment(comment: String, dateTime : String, bookId : String) {
+        cache.insertComment(bookId, comment, dateTime)
+    }
+
+    fun updateComment(comment: String, dateTime : String, bookId : String, id : Int) {
+        cache.updateComment(bookId, comment, dateTime, id)
+    }
+
+    fun deleteComment(bookId : String, id: Int) {
+        cache.deleteComment(bookId, id)
     }
 }
