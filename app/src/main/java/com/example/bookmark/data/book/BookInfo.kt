@@ -1,4 +1,4 @@
-package com.example.bookmark.data.model.book
+package com.example.bookmark.data.book
 
 data class BookInfo(
     val meta : Meta,

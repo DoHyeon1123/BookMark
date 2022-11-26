@@ -1,4 +1,4 @@
-package com.example.bookmark.data.model.book
+package com.example.bookmark.data.book
 
 import java.security.AuthProvider
 
