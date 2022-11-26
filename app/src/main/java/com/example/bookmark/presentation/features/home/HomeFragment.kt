@@ -10,5 +10,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun observerViewModel() {
         Log.e("HomeFragment","실행됨")
+
     }
 }
