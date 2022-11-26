@@ -3,13 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/DGSW/Desktop/GitKraken/Book_Mark/app/src/main/res/layout/activity_login.xml" value="0.184375" />
-        <entry key="..\:/Users/DGSW/Desktop/GitKraken/Book_Mark/app/src/main/res/layout/activity_main.xml" value="0.21" />
-        <entry key="..\:/Users/DGSW/Desktop/GitKraken/Book_Mark/app/src/main/res/layout/fragment_home.xml" value="0.184375" />
-        <entry key="..\:/Users/DGSW/Desktop/GitKraken/Book_Mark/app/src/main/res/layout/fragment_list.xml" value="0.184375" />
-        <entry key="..\:/Users/DGSW/Desktop/GitKraken/Book_Mark/app/src/main/res/layout/fragment_time.xml" value="0.22" />
-        <entry key="..\:/Users/DGSW/Desktop/GitKraken/Book_Mark/app/src/main/res/menu/nav_manu.xml" value="0.25" />
-        <entry key="..\:/Users/DGSW/Desktop/GitKraken/Book_Mark/app/src/main/res/menu/nav_menu.xml" value="0.3619791666666667" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/drawable/ic_book_library.xml" value="0.1" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/drawable/ic_check.xml" value="0.1" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/drawable/ic_home.xml" value="0.1" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/layout/fragment_home.xml" value="0.3101851851851852" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/layout/fragment_list.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/layout/fragment_time.xml" value="0.18489583333333334" />
+        <entry key="..\:/Users/DGSW/Desktop/GitKraken/BookMark/app/src/main/res/menu/nav_menu.xml" value="0.3101851851851852" />
       </map>
     </option>
   </component>

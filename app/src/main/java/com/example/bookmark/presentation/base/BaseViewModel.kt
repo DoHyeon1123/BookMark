@@ -1,4 +1,4 @@
-package com.example.bookmark.presentation.features.base
+package com.example.bookmark.presentation.base
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
