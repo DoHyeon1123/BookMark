@@ -9,3 +9,4 @@ object RetrofitBuilder {
         .addConverterFactory(GsonConverterFactory.create()).build();
     val service: BookInfo = retrofit.create(BookInfo::class.java);
 }
+
