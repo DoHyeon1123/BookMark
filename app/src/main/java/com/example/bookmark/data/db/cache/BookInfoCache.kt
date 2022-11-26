@@ -23,6 +23,9 @@ interface BookInfoCache {
         @Query("SELECT * FROM Library Where id = :id")
         fun selectBook(id : String):BookEntity
 
+        @Query("DELETE FROM Library Where id = :id")
+        fun deleteBook(id : String)
+
         @Query("SELECT * FROM Comments Where bookId = :bookId")
         fun selectComments(bookId: String):List<CommentEntity>
 

@@ -4,8 +4,10 @@ import com.example.bookmark.data.api.remote.BookInfoRemote
 import com.example.bookmark.data.db.BookEntity
 import com.example.bookmark.data.db.cache.BookInfoCache
 import com.example.bookmark.data.book.Document
+import com.example.bookmark.data.db.CommentEntity
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.model.Comment
+import java.time.LocalDate
 
 class BookInfoDataSource constructor(
     private val remote : BookInfoRemote,
@@ -53,15 +55,19 @@ class BookInfoDataSource constructor(
     }
 
     fun deleteBookInLibrary(id: String) {
-        TODO("Not yet implemented")
+        cache.deleteBook(id)
     }
 
-    fun addComment(comment: String, dateTime : String, bookId : String) {
-        cache.insertComment(bookId, comment, dateTime)
+    fun getComments(bookId: String, ):List<CommentEntity>{
+        return cache.selectComments(bookId)
     }
 
-    fun updateComment(comment: String, dateTime : String, bookId : String, id : Int) {
-        cache.updateComment(bookId, comment, dateTime, id)
+    fun addComment(comment: String, bookId : String) {
+        cache.insertComment(bookId, comment, LocalDate.now().toString())
+    }
+
+    fun updateComment(comment: String, bookId : String, id : Int) {
+        cache.updateComment(bookId, comment, LocalDate.now().toString(), id)
     }
 
     fun deleteComment(bookId : String, id: Int) {
