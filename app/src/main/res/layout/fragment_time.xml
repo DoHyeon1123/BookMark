@@ -21,16 +21,6 @@
             android:layout_marginTop="100dp"
             android:textSize="80dp"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@={vm.time}"
-            android:textSize="70dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_reset"
@@ -41,7 +31,7 @@
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="30dp"
-            android:text="저장"
+            android:text="초기화"
             tools:ignore="HardcodedText" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -49,18 +39,18 @@
             android:layout_width="100dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/btn_reset"
-            app:layout_constraintEnd_toStartOf="@id/btn_save"
+            app:layout_constraintEnd_toStartOf="@id/btn_stop"
             app:layout_constraintStart_toEndOf="@id/btn_reset"
             android:text="시작"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_save"
+            android:id="@+id/btn_stop"
             android:layout_width="100dp"
             android:layout_height="50dp"
             app:layout_constraintBottom_toBottomOf="@+id/btn_start"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/btn_start"
-            android:text="초기화"/>
+            android:text="정지"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
