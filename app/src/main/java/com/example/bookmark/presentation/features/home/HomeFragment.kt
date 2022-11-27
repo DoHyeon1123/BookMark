@@ -23,7 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAda
 
     override fun observerViewModel() {
         Log.e("HomeFragment","실행됨")
-        mBinding.searchBar.setOnClickListener {
+        mBinding.btnSearch.setOnClickListener {
             Log.e("HomeFragment","검색")
             viewModel.searchBooks()
         }

@@ -1,10 +1,13 @@
 package com.example.bookmark.presentation.features.library
 
 import android.util.Log
+import androidx.fragment.app.ListFragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bookmark.R
 import com.example.bookmark.databinding.FragmentListBinding
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.presentation.base.BaseFragment
@@ -35,6 +38,7 @@ class ListFragment : BaseFragment<FragmentListBinding, ListViewModel>(), Library
     }
 
     override fun addComment(bookId: String) {
-
+        val action = ListFragmentDirections.actionListFragmentToCommentFragment(bookId)
+        findNavController().navigate(action)
     }
 }
