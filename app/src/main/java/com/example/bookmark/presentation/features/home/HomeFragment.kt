@@ -21,7 +21,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
 
     override fun observerViewModel() {
         Log.e("HomeFragment","실행됨")
-        viewModel.searchBooks()
+        mBinding.searchBar.setOnClickListener {
+            viewModel.searchBooks()
+        }
         with(viewModel) {
             bookList.observe(
                 viewLifecycleOwner,

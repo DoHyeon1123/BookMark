@@ -14,7 +14,9 @@ class HomeViewModel(
     val query = MutableLiveData<String>()
 
     fun searchBooks(){
-            bookList.value = useCases.searchBooks(query.value ?: "책")
-            Log.e("HomeViewModel",bookList.value.toString())
+            CoroutineScope(Dispatchers.IO).launch {
+                bookList.value = useCases.searchBooks(query.value ?: "책")
+                Log.e("HomeViewModel",bookList.value.toString())
+            }
     }
 }

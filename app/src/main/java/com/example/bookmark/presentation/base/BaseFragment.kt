@@ -35,6 +35,8 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
         return mBinding.root
     }
 
+
+
     @LayoutRes
     private fun layoutRes(): Int {
         val split =
@@ -69,6 +71,13 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
         mBinding.setVariable(BR.vm, mViewModel)
         mBinding.lifecycleOwner = this
         mBinding.executePendingBindings()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        this.savedInstanceState = savedInstanceState
+        setUp()
+        observerViewModel()
     }
 
 }
