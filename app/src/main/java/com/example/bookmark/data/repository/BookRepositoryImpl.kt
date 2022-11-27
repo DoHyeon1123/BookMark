@@ -6,8 +6,9 @@ import com.example.bookmark.data.db.CommentEntity
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.model.Comment
 import com.example.bookmark.domain.repository.BookRepository
+import javax.inject.Inject
 
-class BookRepositoryImpl(override val dataSource: BookInfoDataSource) : BookRepository {
+class BookRepositoryImpl @Inject constructor( private val dataSource: BookInfoDataSource) : BookRepository {
 
     override fun searchBooks(keyWord: String): List<Book> {
         return dataSource.searchBooks(keyWord)

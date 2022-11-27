@@ -7,7 +7,6 @@ import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.model.Comment
 
 interface BookRepository {
-    val dataSource :BookInfoDataSource
     //REST api
     fun searchBooks(keyWord : String):List<Book>
 

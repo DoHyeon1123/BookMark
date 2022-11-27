@@ -1,30 +1,29 @@
 package com.example.bookmark.data.datasource
 
 import android.util.Log
-import androidx.room.Entity
 import com.example.bookmark.data.api.remote.BookInfoRemote
 import com.example.bookmark.data.book.BookResponse
-import com.example.bookmark.data.db.BookEntity
-import com.example.bookmark.data.db.cache.BookInfoCache
-import com.example.bookmark.data.book.Document
-import com.example.bookmark.data.db.CommentEntity
+import com.example.bookmark.data.db.cache.BookCache
+import com.example.bookmark.data.db.dao.BookDao
 import com.example.bookmark.data.mapper.BookMapper
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.model.Comment
 import retrofit2.Call
 import retrofit2.Response
 import java.time.LocalDate
+import javax.inject.Inject
 
-class BookInfoDataSource constructor(
+class BookInfoDataSource  @Inject constructor(
     private val remote : BookInfoRemote,
-    private val cache : BookInfoCache,
-    private val mapper: BookMapper
+    private val cache : BookCache,
 ){
+    private val mapper = BookMapper()
 
     fun searchBooks(query : String): List<Book>{
         var list : List<Book> = listOf()
         remote.searchBookInfo(query).enqueue(object : retrofit2.Callback<BookResponse>{
             override fun onResponse(call: Call<BookResponse>, response: Response<BookResponse>) {
+                Log.e("DataSource",list.toString())
                 list = mapper.mapDocumentToBook(response.body()!!.documents)
             }
 

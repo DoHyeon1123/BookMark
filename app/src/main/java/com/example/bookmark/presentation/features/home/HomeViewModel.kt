@@ -5,9 +5,12 @@ import androidx.lifecycle.MutableLiveData
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.usecase.BookUseCases
 import com.example.bookmark.presentation.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.*
+import javax.inject.Inject
 
-class HomeViewModel(
+@HiltViewModel
+class HomeViewModel @Inject constructor(
     private val useCases : BookUseCases
 ) : BaseViewModel() {
     val bookList = MutableLiveData<List<Book>>()

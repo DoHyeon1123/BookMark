@@ -8,7 +8,9 @@ import com.example.bookmark.databinding.FragmentHomeBinding
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.presentation.base.BaseFragment
 import com.example.bookmark.presentation.features.home.adapter.HomeAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override val viewModel: HomeViewModel by viewModels()
     private val adapter = HomeAdapter()

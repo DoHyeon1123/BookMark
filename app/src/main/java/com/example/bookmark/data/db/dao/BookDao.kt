@@ -1,4 +1,4 @@
-package com.example.bookmark.data.db.cache
+package com.example.bookmark.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Query
@@ -7,7 +7,7 @@ import com.example.bookmark.data.db.CommentEntity
 import com.example.bookmark.domain.model.Comment
 
 @Dao
-interface BookInfoCache {
+interface BookDao {
         @Query("INSERT INTO Library(id, authors, title, image, contents, url) VALUES(:id,:authors, :title, :image, :contents, :url)")
         fun insertBookInfo(
             id : String,

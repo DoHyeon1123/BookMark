@@ -1,6 +1,12 @@
 package com.example.bookmark.presentation.features.timer
 
+import com.example.bookmark.domain.usecase.BookUseCases
 import com.example.bookmark.presentation.base.BaseViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class TimeViewModel : BaseViewModel() {
+@HiltViewModel
+class TimeViewModel  @Inject constructor(
+    private val useCases: BookUseCases
+): BaseViewModel() {
 }
