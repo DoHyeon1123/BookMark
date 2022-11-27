@@ -17,11 +17,11 @@ class BookRepositoryImpl(override val dataSource: BookInfoDataSource) : BookRepo
         dataSource.addBookInLibrary(info)
     }
 
-    override fun getBooksInLibrary(): List<BookEntity> {
+    override fun getBooksInLibrary(): List<Book> {
         return dataSource.getBooksInLibrary()
     }
 
-    override fun getBookInLibrary(id: String): BookEntity {
+    override fun getBookInLibrary(id: String): Book {
         return dataSource.getBookInLibrary(id)
     }
 
@@ -33,7 +33,7 @@ class BookRepositoryImpl(override val dataSource: BookInfoDataSource) : BookRepo
         return dataSource.deleteBookInLibrary(id)
     }
 
-    override fun getComment(bookId: String):List<CommentEntity> {
+    override fun getComment(bookId: String):List<Comment> {
         return dataSource.getComments(bookId)
     }
 

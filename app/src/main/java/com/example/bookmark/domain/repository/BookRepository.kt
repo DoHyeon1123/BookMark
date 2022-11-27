@@ -14,13 +14,13 @@ interface BookRepository {
     //Room
     fun addBookInLibrary(info : Book)
 
-    fun getBooksInLibrary():List<BookEntity>
+    fun getBooksInLibrary():List<Book>
 
-    fun getBookInLibrary(id : String):BookEntity
+    fun getBookInLibrary(id : String):Book
     fun updateBookInLibrary(info : Book)
     fun deleteBookInLibrary(id: String)
 
-    fun getComment(bookId : String) : List<CommentEntity>
+    fun getComment(bookId : String) : List<Comment>
     fun addComment(comment : String, bookId: String)
     fun updateComment(comment: String, bookId: String, id: Int)
     fun deleteComment(bookId : String, id : Int)
