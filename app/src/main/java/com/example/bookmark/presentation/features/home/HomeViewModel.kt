@@ -24,7 +24,7 @@ class HomeViewModel @Inject constructor(
             val response = useCases.searchBooks(query.value ?: "책갈피")
             Log.e("HomeViewModel",response.toString())
             withContext(Dispatchers.Main){
-                delay(1000L)
+                delay(3000L)
                 bookList.value = response
                 Log.e("HomeViewModel",response.toString())
             }

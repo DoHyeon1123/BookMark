@@ -1,5 +1,6 @@
 package com.example.bookmark.presentation.features.timer
 
+import android.util.Log
 import androidx.fragment.app.viewModels
 import com.example.bookmark.databinding.FragmentTimeBinding
 import com.example.bookmark.presentation.base.BaseFragment
@@ -10,5 +11,16 @@ class TimeFragment : BaseFragment<FragmentTimeBinding, TimeViewModel>() {
     override val viewModel: TimeViewModel by viewModels()
 
     override fun observerViewModel() {
+        with(mBinding){
+            btnStart.setOnClickListener{
+                Log.e("TimeFragment","Start")
+            }
+            btnSave.setOnClickListener{
+                Log.e("TimeFragment","Save")
+            }
+            btnReset.setOnClickListener{
+                Log.e("TimeFragment","Reset")
+            }
+        }
     }
 }
