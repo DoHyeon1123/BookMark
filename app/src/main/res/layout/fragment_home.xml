@@ -17,8 +17,11 @@
             app:layout_constraintTop_toTopOf="parent"
             android:inputType="text"
             android:hint="@string/text_search"
-            android:text="@={vm.query}"
-            style="@style/Widget.Material3.TextInputLayout.FilledBox.Dense"/>
+            android:text="@={vm.query}"/>
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+             />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_book_list"
         android:layout_width="match_parent"

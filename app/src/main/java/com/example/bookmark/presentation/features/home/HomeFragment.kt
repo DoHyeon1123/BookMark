@@ -12,7 +12,7 @@ import com.example.bookmark.presentation.features.home.adapter.HomeAdapter
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override val viewModel: HomeViewModel by viewModels()
-    val adapter = HomeAdapter()
+    private val adapter = HomeAdapter()
     override fun onStart() {
         super.onStart()
         mBinding.rvBookList.adapter = adapter
@@ -22,7 +22,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun observerViewModel() {
         Log.e("HomeFragment","실행됨")
         viewModel.searchBooks()
-
         with(viewModel) {
             bookList.observe(
                 viewLifecycleOwner,

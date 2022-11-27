@@ -8,7 +8,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.book_mark2"
+        applicationId "com.example.bookmark"
         minSdk 31
         targetSdk 32
         versionCode 1
