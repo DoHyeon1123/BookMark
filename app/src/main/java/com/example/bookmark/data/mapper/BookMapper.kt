@@ -8,7 +8,7 @@ import com.example.bookmark.domain.model.Comment
 
 class BookMapper {
     fun mapDocumentToBook(list : List<Document>) : List<Book>{
-        val newList : MutableList<Book> = listOf<Book>() as MutableList<Book>
+        val newList : MutableList<Book> = arrayListOf()
         list.map {
             newList.add(
                 Book(
@@ -25,7 +25,7 @@ class BookMapper {
     }
 
     fun mapEntityToBook(list : List<BookEntity>) : List<Book>{
-        val newList : MutableList<Book> = listOf<Book>() as MutableList<Book>
+        val newList : MutableList<Book> = arrayListOf()
         list.map {
             newList.add(
                 Book(
@@ -42,7 +42,7 @@ class BookMapper {
     }
 
     fun mapEntityToComment(list : List<CommentEntity>) : List<Comment>{
-        val newList : MutableList<Comment> = listOf<Comment>() as MutableList<Comment>
+        val newList : MutableList<Comment> = arrayListOf()
         list.map {
             newList.add(
                 Comment(

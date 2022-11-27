@@ -10,6 +10,5 @@ class TimeFragment : BaseFragment<FragmentTimeBinding, TimeViewModel>() {
     override val viewModel: TimeViewModel by viewModels()
 
     override fun observerViewModel() {
-        TODO("Not yet implemented")
     }
 }
