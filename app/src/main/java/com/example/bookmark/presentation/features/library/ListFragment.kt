@@ -12,9 +12,9 @@ import com.example.bookmark.presentation.features.library.adapter.LibraryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ListFragment : BaseFragment<FragmentListBinding, ListViewModel>() {
+class ListFragment : BaseFragment<FragmentListBinding, ListViewModel>(), LibraryAdapter.CallBack {
     override val viewModel : ListViewModel by viewModels()
-    private val adapter = LibraryAdapter()
+    private val adapter = LibraryAdapter(this)
     override fun onStart() {
         super.onStart()
         viewModel.getBooksInLibrary()
@@ -32,5 +32,9 @@ class ListFragment : BaseFragment<FragmentListBinding, ListViewModel>() {
                 }
             )
         }
+    }
+
+    override fun addComment(bookId: String) {
+
     }
 }
