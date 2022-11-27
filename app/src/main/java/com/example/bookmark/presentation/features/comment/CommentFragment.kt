@@ -1,9 +1,12 @@
 package com.example.bookmark.presentation.features.comment
 
+import android.util.Log
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bookmark.databinding.FragmentCommentBinding
+import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.model.Comment
 import com.example.bookmark.presentation.base.BaseFragment
 import com.example.bookmark.presentation.features.comment.adapter.CommentAdapter
@@ -18,6 +21,7 @@ class CommentFragment : BaseFragment<FragmentCommentBinding,CommentViewModel>(),
 
     override fun onStart() {
         super.onStart()
+        viewModel.getComment(args.bookId)
         mBinding.rvComment.adapter = adapter
         mBinding.rvComment.layoutManager =LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
     }
@@ -25,6 +29,16 @@ class CommentFragment : BaseFragment<FragmentCommentBinding,CommentViewModel>(),
     override fun observerViewModel() {
         mBinding.btnComment.setOnClickListener{
             viewModel.addComment(args.bookId)
+        }
+
+        with(viewModel){
+            commentList.observe(
+                viewLifecycleOwner,
+                Observer<List<Comment>> {
+                    Log.e("LibraryFragment", it.toString())
+                    adapter.submitList(it)
+                }
+            )
         }
     }
 
