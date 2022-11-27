@@ -1,5 +1,6 @@
 package com.example.bookmark.presentation.features.home
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.usecase.BookUseCases
@@ -10,11 +11,10 @@ class HomeViewModel(
     private val useCases : BookUseCases
 ) : BaseViewModel() {
     val bookList = MutableLiveData<List<Book>>()
+    val query = MutableLiveData<String>()
 
-    fun searchBooks(query: String){
-        CoroutineScope(Dispatchers.IO).launch {
-            bookList.value = useCases.searchBooks(query)
-
-        }
+    fun searchBooks(){
+            bookList.value = useCases.searchBooks(query.value ?: "")
+            Log.e("HomeViewModel",bookList.value.toString())
     }
 }
