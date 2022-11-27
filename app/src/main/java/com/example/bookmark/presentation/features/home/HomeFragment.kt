@@ -4,7 +4,6 @@ import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.bookmark.databinding.FragmentHomeBinding
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.presentation.base.BaseFragment
