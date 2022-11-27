@@ -8,6 +8,6 @@ import javax.inject.Inject
 
 class BookInfoRemote @Inject constructor(private val api: BookInfoApi) {
     fun searchBookInfo(query : String): Call<BookResponse> {
-        return api.searchBookInfo(Constants.API_KEY,query)
+        return api.searchBookInfo("KakaoAK ${Constants.API_KEY}",query)
     }
 }

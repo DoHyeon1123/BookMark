@@ -25,15 +25,14 @@
             android:padding="10dp"
             android:layout_margin="10dp"/>
 
-        <ImageButton
+        <ImageView
             android:id="@+id/btn_search"
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_margin="10dp"
-            android:background="@drawable/ic_search"
-            android:padding="5dp"/>
+            android:src="@drawable/ic_search" />
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_book_list"
         android:layout_width="match_parent"

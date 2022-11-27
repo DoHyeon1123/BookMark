@@ -23,8 +23,8 @@ class BookInfoDataSource  @Inject constructor(
         var list : List<Book> = listOf()
         remote.searchBookInfo(query).enqueue(object : retrofit2.Callback<BookResponse>{
             override fun onResponse(call: Call<BookResponse>, response: Response<BookResponse>) {
-                Log.e("DataSource",list.toString())
                 list = mapper.mapDocumentToBook(response.body()!!.documents)
+                Log.e("DataSource",list.toString())
             }
 
             override fun onFailure(call: Call<BookResponse>, t: Throwable) {

@@ -16,6 +16,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     private val adapter = HomeAdapter()
     override fun onStart() {
         super.onStart()
+        viewModel.searchBooks()
         mBinding.rvBookList.adapter = adapter
         mBinding.rvBookList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
     }
@@ -23,6 +24,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override fun observerViewModel() {
         Log.e("HomeFragment","실행됨")
         mBinding.searchBar.setOnClickListener {
+            Log.e("HomeFragment","검색")
             viewModel.searchBooks()
         }
         with(viewModel) {
@@ -31,6 +33,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
                 Observer<List<Book>> {
                     Log.e("LostFoundFragment", it.toString())
                     adapter.submitList(it)
+                    stopJob()
                 }
             )
         }
