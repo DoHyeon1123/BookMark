@@ -1,20 +1,18 @@
 package com.example.bookmark.data.repository
 
-import com.example.bookmark.data.book.BookResponse
 import com.example.bookmark.data.datasource.BookInfoDataSource
 import com.example.bookmark.data.db.BookEntity
 import com.example.bookmark.data.db.CommentEntity
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.domain.model.Comment
 import com.example.bookmark.domain.repository.BookRepository
-import retrofit2.Call
 import javax.inject.Inject
 
 class BookRepositoryImpl @Inject constructor(
     private val dataSource: BookInfoDataSource
     ) : BookRepository {
 
-    override fun searchBooks(keyWord: String): Call<BookResponse> {
+    override fun searchBooks(keyWord: String): List<Book> {
         return dataSource.searchBooks(keyWord)
     }
 

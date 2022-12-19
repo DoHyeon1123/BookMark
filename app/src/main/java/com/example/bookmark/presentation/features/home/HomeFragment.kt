@@ -11,9 +11,9 @@ import com.example.bookmark.presentation.features.home.adapter.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAdapter.CallBack{
+class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
     override val viewModel: HomeViewModel by viewModels()
-    private val adapter = HomeAdapter(this)
+    private val adapter = HomeAdapter()
     override fun onStart() {
         super.onStart()
         viewModel.searchBooks()
@@ -23,7 +23,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAda
 
     override fun observerViewModel() {
         Log.e("HomeFragment","실행됨")
-        mBinding.btnSearch.setOnClickListener {
+        mBinding.searchBar.setOnClickListener {
             Log.e("HomeFragment","검색")
             viewModel.searchBooks()
         }
@@ -33,12 +33,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAda
                 Observer<List<Book>> {
                     Log.e("LostFoundFragment", it.toString())
                     adapter.submitList(it)
+                    stopJob()
                 }
             )
         }
-    }
-
-    override fun addBook(info: Book) {
-        viewModel.addBookInLibrary(info)
     }
 }

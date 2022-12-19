@@ -13,7 +13,5 @@ class ListViewModel @Inject constructor(private val useCases: BookUseCases) : Ba
 
     fun getBooksInLibrary(){
         list.value = useCases.getBooksInLibrary()
-
     }
-
 }

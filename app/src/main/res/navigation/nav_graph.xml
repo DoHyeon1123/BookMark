@@ -28,13 +28,6 @@
         <action
             android:id="@+id/action_listFragment_to_timeFragment"
             app:destination="@id/timeFragment" />
-        <action
-            android:id="@+id/action_listFragment_to_commentFragment"
-            app:destination="@id/commentFragment" />
-        <argument
-            android:name="bookId"
-            android:defaultValue="00"
-            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/timeFragment"
@@ -44,15 +37,5 @@
         <action
             android:id="@+id/action_timeFragment_to_listFragment"
             app:destination="@id/listFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/commentFragment"
-        android:name="com.example.bookmark.presentation.features.comment.CommentFragment"
-        android:label="CommentFragment"
-        tools:layout="@layout/fragment_comment">
-        <argument
-            android:name="bookId"
-            android:defaultValue="00"
-            app:argType="string" />
     </fragment>
 </navigation>
