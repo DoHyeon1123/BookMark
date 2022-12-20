@@ -10,7 +10,12 @@ import com.example.bookmark.databinding.ItemSearchResultBinding
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.presentation.base.BaseListAdapter
 
-class HomeAdapter :  BaseListAdapter<Book,ItemSearchResultBinding>(R.layout.item_search_result,HomeDiffUtilCallback ){
+class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book,ItemSearchResultBinding>(R.layout.item_search_result,HomeDiffUtilCallback ){
+
+    interface CallBack{
+        fun addBook(info : Book)
+    }
+
     override fun action(item: Book, binding: ItemSearchResultBinding) {
         binding.info = item
 
@@ -19,5 +24,9 @@ class HomeAdapter :  BaseListAdapter<Book,ItemSearchResultBinding>(R.layout.item
             .centerCrop()
             .error(R.drawable.ic_book)
             .into(binding.ivThumbnail)
+
+        binding.root.setOnClickListener {
+            listener.addBook(item)
+        }
     }
 }
