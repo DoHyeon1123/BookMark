@@ -1,7 +1,6 @@
 package com.example.bookmark.data.datasource
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import com.example.bookmark.data.api.remote.BookInfoRemote
 import com.example.bookmark.data.book.BookResponse
 import com.example.bookmark.data.db.cache.BookCache
@@ -19,10 +18,21 @@ class BookInfoDataSource  @Inject constructor(
     private val cache : BookCache,
 ){
     private val mapper = BookMapper()
-    var list : List<Book> = listOf()
 
-    fun searchBooks(query : String) : Call<BookResponse>{
-        return remote.searchBookInfo(query)
+    fun searchBooks(query : String): List<Book>{
+        var list : List<Book> = listOf()
+        remote.searchBookInfo(query).enqueue(object : retrofit2.Callback<BookResponse>{
+            override fun onResponse(call: Call<BookResponse>, response: Response<BookResponse>) {
+                list = mapper.mapDocumentToBook(response.body()!!.documents)
+                Log.e("DataSource",list.toString())
+            }
+
+            override fun onFailure(call: Call<BookResponse>, t: Throwable) {
+                TODO("Not yet implemented")
+            }
+
+        })
+        return list
     }
     fun addBookInLibrary(info : Book){
         cache.insertBookInfo(
