@@ -12,7 +12,7 @@ class TimeFragment : BaseFragment<FragmentTimeBinding, TimeViewModel>() {
 
     //  뒤로가기 버튼을 누른 시각을 저장하는 속성
     var initTime = 0L
-
+    //TODO sdsd
     // 멈춘 시각을 저장하는 속성
     var pauseTime = 0L
     override fun observerViewModel() {
