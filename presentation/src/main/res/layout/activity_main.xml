@@ -7,7 +7,7 @@
     <data>
         <variable
             name="main"
-            type="com.example.bookmark.MainActivity" />
+            type="com.bookmark.presentation.MainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
