@@ -13,5 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BookMark"
-include(":presentation", ":domain",":di",":local",":remote")
-include(":data")
+
+
+include(":presentation", ":domain",":di",":local",":remote",":data")
