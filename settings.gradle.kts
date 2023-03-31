@@ -10,13 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven { url 'https://devrepo.kakao.com/nexus/content/groups/public/' }
     }
 }
 rootProject.name = "BookMark"
-include ':presentation'
-include ':data'
-include ':domain'
-include ':di'
-include ':local'
-include ':remote'
+include(":presentation", ":domain",":di",":local",":remote")
+include(":data")

@@ -1,4 +1,4 @@
-package com.example.bookmark
+package com.bookmark.data
 
 import org.junit.Test
 
