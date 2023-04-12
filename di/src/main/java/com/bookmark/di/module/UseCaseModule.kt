@@ -1,9 +1,15 @@
 package com.bookmark.di.module
 
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
+
 @Module
 @InstallIn(SingletonComponent::class)
 class UseCaseModule {
-    @Singleton
+    /*@Singleton
     @Provides
     fun provideBookUseCase(
         repository : BookRepository
@@ -20,5 +26,5 @@ class UseCaseModule {
             updateBookInLibrary = UpdateBookInLibrary(repository),
             updateComment = UpdateComment(repository)
         )
-    }
+    }*/
 }

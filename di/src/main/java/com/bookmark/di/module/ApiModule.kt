@@ -1,7 +1,5 @@
 package com.bookmark.di.module
 
-import com.example.bookmark.BuildConfig
-import com.example.bookmark.data.util.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -12,16 +10,26 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
+
 @Module
 @InstallIn(SingletonComponent::class)
 object ApiModule {
 
+
+    object Constants { //TODO 삭제해야 함 아키텍처 구축 후 위치 이동하기
+        const val API_HOST = ""
+    }
+
+    //Provides는 인스턴스를 Retrofit OkHttp등의 객체를 제공합니다.
+    // Singleton은 싱글톤 객체를 의미합니다.
     @Provides
     fun provideBaseUrl() = Constants.API_HOST
 
     @Singleton
     @Provides
     fun provideOkHttpClient() = if (BuildConfig.DEBUG) {
+
+        //loggingIterceptor를 사용해 Body 레벨 Response를 logging합니다.
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         OkHttpClient.Builder()

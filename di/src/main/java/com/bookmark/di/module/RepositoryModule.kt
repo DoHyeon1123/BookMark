@@ -1,7 +1,5 @@
 package com.bookmark.di.module
 
-import com.example.bookmark.data.repository.BookRepositoryImpl
-import com.example.bookmark.domain.repository.BookRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -11,11 +9,11 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class RepositoryModule {
-    @Singleton
+    /*@Singleton
     @Provides
     fun provideBookRepository(
         bookRepositoryImpl: BookRepositoryImpl
     ) : BookRepository{
         return bookRepositoryImpl
-    }
+    }*/
 }

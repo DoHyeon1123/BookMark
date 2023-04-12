@@ -10,8 +10,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class RemoteModule {
-    @Singleton
+    /*@Singleton
     @Provides
     fun provideBookInfoRemote(retrofit: Retrofit): com.bookmark.presentation.data.api.remote.BookInfoRemote =
         com.bookmark.presentation.data.api.remote.BookInfoRemote(retrofit.create(com.bookmark.presentation.data.api.service.BookInfoApi::class.java))
+
+     */
 }
