@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.comment
+package com.bookmark.presentation.features.comment.view
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.home
+package com.bookmark.presentation.features.home.view
 
 import android.util.Log
 import androidx.fragment.app.viewModels

@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.main
+package com.bookmark.presentation.features.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
