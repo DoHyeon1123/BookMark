@@ -49,9 +49,9 @@ object ApiModule {
             .build()
     }
 
-    @Provides
+    /*@Provides
     @Singleton
     fun provideApiService(retrofit: Retrofit): com.bookmark.presentation.data.api.service.BookInfoApi {
         return retrofit.create(com.bookmark.presentation.data.api.service.BookInfoApi::class.java)
-    }
+    }*/
 }
