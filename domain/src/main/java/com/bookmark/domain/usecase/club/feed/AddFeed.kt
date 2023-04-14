@@ -1,5 +1,5 @@
 package com.bookmark.domain.usecase.club.feed
 
-class AddFeed {
+class AddFeed @Inject {
     fun invoke() {}
 }

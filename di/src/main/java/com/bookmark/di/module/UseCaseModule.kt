@@ -1,5 +1,8 @@
 package com.bookmark.di.module
 
+import com.bookmark.domain.repository.BookRepository
+import com.bookmark.domain.usecase.BookUseCases
+import com.bookmark.domain.usecase.club.feed.AddFeed
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -9,22 +12,13 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class UseCaseModule {
-    /*@Singleton
+    @Singleton
     @Provides
     fun provideBookUseCase(
         repository : BookRepository
     ) : BookUseCases{
         return BookUseCases(
-            searchBooks = SearchBooks(repository),
-            addBookInLibrary = AddBookInLibrary(repository),
-            getBookInLibrary = GetBookInLibrary(repository),
-            getBooksInLibrary = GetBooksInLibrary(repository),
-            getComment = GetComment(repository),
-            deleteBookInLibrary = DeleteBookInLibrary(repository),
-            deleteComment = DeleteComment(repository),
-            addComment = AddComment(repository),
-            updateBookInLibrary = UpdateBookInLibrary(repository),
-            updateComment = UpdateComment(repository)
+            addFeed = AddFeed(repository),
         )
-    }*/
+    }
 }
