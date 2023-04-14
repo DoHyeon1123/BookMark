@@ -1,19 +1,17 @@
-package com.bookmark.presentation.features.home.adapter
+package com.bookmark.presentation.features.profile.adapter
 
 import com.bumptech.glide.Glide
 import com.example.bookmark.R
-import com.example.bookmark.databinding.ItemSearchResultBinding
+import com.example.bookmark.databinding.ItemLibraryBinding
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.presentation.base.BaseListAdapter
 
-class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book,ItemSearchResultBinding>(R.layout.item_search_result,
-    HomeDiffUtilCallback ){
-
+class LibraryAdapter(private val listener : CallBack) :  BaseListAdapter<Book,ItemLibraryBinding>(R.layout.item_library,
+    LibraryDiffUtilCallback ){
     interface CallBack{
-        fun addBook(info : Book)
+        fun addComment(bookId : String)
     }
-
-    override fun action(item: Book, binding: ItemSearchResultBinding) {
+    override fun action(item: Book, binding: ItemLibraryBinding) {
         binding.info = item
 
         Glide.with(binding.ivThumbnail)
@@ -23,7 +21,7 @@ class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book,ItemS
             .into(binding.ivThumbnail)
 
         binding.root.setOnClickListener {
-            listener.addBook(item)
+            listener.addComment(item.id)
         }
     }
 }

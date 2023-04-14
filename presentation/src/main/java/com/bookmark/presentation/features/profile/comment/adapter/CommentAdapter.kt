@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.comment.adapter
+package com.bookmark.presentation.features.profile.comment.adapter
 
 import com.example.bookmark.R
 import com.example.bookmark.databinding.ItemCommentBinding
