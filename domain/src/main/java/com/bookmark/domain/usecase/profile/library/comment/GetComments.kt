@@ -1,5 +1,8 @@
 package com.bookmark.domain.usecase.profile.library.comment
 
-class GetComments {
+import com.bookmark.domain.repository.BookRepository
+import javax.inject.Inject
+
+class GetComments @Inject constructor(private val repository : BookRepository) {
     fun invoke() {}
 }

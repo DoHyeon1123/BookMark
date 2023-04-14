@@ -1,5 +1,8 @@
 package com.bookmark.domain.usecase.club
 
-class UpdateClub {
+import com.bookmark.domain.repository.BookRepository
+import javax.inject.Inject
+
+class UpdateClub @Inject constructor(private val repository : BookRepository) {
     fun invoke() {}
 }

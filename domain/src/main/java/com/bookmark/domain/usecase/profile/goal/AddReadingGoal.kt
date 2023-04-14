@@ -1,5 +1,8 @@
 package com.bookmark.domain.usecase.profile.goal
 
-class AddReadingGoal {
+import com.bookmark.domain.repository.BookRepository
+import javax.inject.Inject
+
+class AddReadingGoal @Inject constructor(private val repository : BookRepository) {
     fun invoke() {}
 }

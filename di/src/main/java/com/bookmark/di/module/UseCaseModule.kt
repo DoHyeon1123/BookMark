@@ -3,6 +3,7 @@ package com.bookmark.di.module
 import com.bookmark.domain.repository.BookRepository
 import com.bookmark.domain.usecase.BookUseCases
 import com.bookmark.domain.usecase.club.feed.AddFeed
+import com.bookmark.domain.usecase.club.feed.DeleteFeed
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,6 +20,7 @@ class UseCaseModule {
     ) : BookUseCases{
         return BookUseCases(
             addFeed = AddFeed(repository),
+            deleteFeed = DeleteFeed(repository)
         )
     }
 }
