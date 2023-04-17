@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.profile.comment.adapter
+package com.bookmark.presentation.features.comment.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.bookmark.domain.model.Comment

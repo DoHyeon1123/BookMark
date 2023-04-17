@@ -1,11 +1,16 @@
-package com.bookmark.presentation.features.profile.comment.adapter
+package com.bookmark.presentation.features.comment.adapter
 
+import com.bookmark.presentation.R
+import com.bookmark.presentation.base.BaseListAdapter
+import com.bookmark.presentation.databinding.ItemCommentBinding
 import com.example.bookmark.R
 import com.example.bookmark.databinding.ItemCommentBinding
 import com.example.bookmark.domain.model.Comment
 import com.example.bookmark.presentation.base.BaseListAdapter
+import org.w3c.dom.Comment
 
-class CommentAdapter(private val listener : CallBack) :  BaseListAdapter<Comment,ItemCommentBinding>(R.layout.item_comment,
+class CommentAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, ItemCommentBinding>(
+    R.layout.item_comment,
     CommentDiffUtilCallback ){
 
     interface CallBack{
