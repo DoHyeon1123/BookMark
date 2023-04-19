@@ -12,9 +12,9 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
-class CommentFragment : BaseFragment<FragmentCommentBinding,CommentViewModel>(), CommentAdapter.CallBack
-/*class CommentFragment() : BaseFragment<FragmentCommentBinding, CommentViewModel>(), CommentAdapter.CallBack {
-    override val viewModel : CommentViewModel by viewModels()
+
+class CommentFragment() : BaseFragment<FragmentCommentBinding, HomeViewModel>(), CommentAdapter.CallBack {
+    override val viewModel : HomeViewModel by viewModels()
     private val adapter = CommentAdapter(this)
 
     private val args: CommentFragmentArgs by navArgs()
@@ -45,4 +45,4 @@ class CommentFragment : BaseFragment<FragmentCommentBinding,CommentViewModel>(),
     override fun deleteComment(info: Comment) {
         viewModel.deleteComment(info.bookId, info.id)
     }
-}*/
+}

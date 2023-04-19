@@ -9,7 +9,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CommentViewModel @Inject constructor(
+class HomeViewModel @Inject constructor(
     private val useCases: BookUseCases
 ) : BaseViewModel() {
     val comment = MutableLiveData<String>()

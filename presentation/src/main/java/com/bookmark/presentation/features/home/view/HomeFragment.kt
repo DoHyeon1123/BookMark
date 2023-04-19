@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.comment.view
+package com.bookmark.presentation.features.home.view
 
 import android.util.Log
 import androidx.fragment.app.viewModels
@@ -8,16 +8,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentCommentBinding
 import com.bookmark.presentation.features.comment.adapter.CommentAdapter
-import com.example.bookmark.databinding.FragmentCommentBinding
-import com.example.bookmark.domain.model.Comment
-import com.example.bookmark.presentation.base.BaseFragment
-import com.example.bookmark.presentation.features.comment.adapter.CommentAdapter
+import com.bookmark.presentation.features.comment.view.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import org.w3c.dom.Comment
 
 @AndroidEntryPoint
-class CommentFragment : BaseFragment<FragmentCommentBinding, CommentViewModel>(), CommentAdapter.CallBack {
-    override val viewModel: CommentViewModel by viewModels()
+class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), CommentAdapter.CallBack {
+    override val viewModel: HomeViewModel by viewModels()
     private val adapter = CommentAdapter(this)
 
     private val args: CommentFragmentArgs by navArgs()
