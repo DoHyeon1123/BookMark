@@ -40,7 +40,7 @@ android {
 }
 
 dependencies {
-    implementation(":domain")
+    implementation(project(":domain"))
 
     implementation(Libraries.app)
     testImplementation(Libraries.test)
