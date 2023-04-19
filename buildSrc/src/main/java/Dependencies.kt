@@ -1,6 +1,11 @@
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
+
 object Libraries {
+
+    val GRADLE = "com.android.tools.build:gradle:7.4.1"
+    val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
+    val NAVIGATION = "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
 
     //Android
     private val appcompat = "androidx.appcompat:appcompat:${Versions.AndroidX.APP_COMPAT}"

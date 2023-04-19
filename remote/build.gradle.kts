@@ -47,15 +47,12 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.8.0")
-    implementation("androidx.core:core-ktx:+")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(project(":domain"))
 
-    //Hilt DI
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-android-compiler:2.44")
+    implementation(Libraries.network)
+    testImplementation(Libraries.test)
+    androidTestImplementation(Libraries.androidTest)
+    implementation(Libraries.di)
+    implementation(Libraries.async)
+    kapt(Libraries.kapt)
 }
