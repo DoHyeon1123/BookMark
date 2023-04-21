@@ -8,15 +8,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.Comment
 import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentCommentBinding
-import com.bookmark.presentation.features.comment.adapter.CommentAdapter
+import com.bookmark.presentation.features.comment.adapter.ClubListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
 
-class CommentFragment() : BaseFragment<FragmentCommentBinding, HomeViewModel>(), CommentAdapter.CallBack {
+class CommentFragment() : BaseFragment<FragmentCommentBinding, HomeViewModel>(), ClubListAdapter.CallBack {
     override val viewModel : HomeViewModel by viewModels()
-    private val adapter = CommentAdapter(this)
+    private val adapter = ClubListAdapter(this)
 
     private val args: CommentFragmentArgs by navArgs()
 

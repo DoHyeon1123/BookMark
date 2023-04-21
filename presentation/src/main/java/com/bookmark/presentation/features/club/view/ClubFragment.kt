@@ -4,6 +4,8 @@ import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bookmark.presentation.base.BaseFragment
+import com.bookmark.presentation.databinding.FragmentHomeBinding
 import com.example.bookmark.databinding.FragmentHomeBinding
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.presentation.base.BaseFragment
@@ -11,8 +13,8 @@ import com.example.bookmark.presentation.features.home.adapter.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAdapter.CallBack{
-    override val viewModel: HomeViewModel by viewModels()
+class ClubFragment : BaseFragment<FragmentHomeBinding, ClubViewModel>(), HomeAdapter.CallBack{
+    override val viewModel: ClubViewModel by viewModels()
     private val adapter = HomeAdapter(this)
     override fun onStart() {
         super.onStart()

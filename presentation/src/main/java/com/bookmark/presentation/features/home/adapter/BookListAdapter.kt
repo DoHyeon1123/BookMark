@@ -5,7 +5,7 @@ import com.bookmark.presentation.base.BaseListAdapter
 import com.bookmark.presentation.databinding.ItemCommentBinding
 import org.w3c.dom.Comment
 
-class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, ItemCommentBinding>(
+class BookListAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, ItemCommentBinding>(
     R.layout.item_comment,
     CommentDiffUtilCallback ){
 
@@ -14,7 +14,7 @@ class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, I
     }
 
     override fun action(item: Comment, binding: ItemCommentBinding) {
-        binding.info = item
+        //binding.info = item
         binding.root.setOnClickListener {
             listener.deleteComment(item)
         }

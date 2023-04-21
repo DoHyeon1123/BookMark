@@ -6,8 +6,8 @@ import com.example.bookmark.databinding.ItemSearchResultBinding
 import com.example.bookmark.domain.model.Book
 import com.example.bookmark.presentation.base.BaseListAdapter
 
-class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book,ItemSearchResultBinding>(R.layout.item_search_result,
-    HomeDiffUtilCallback ){
+class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book,ItemSearchResultBinding>(R.layout.item_search_result,
+    ClubDiffUtilCallback ){
 
     interface CallBack{
         fun addBook(info : Book)

@@ -6,7 +6,7 @@ import com.bookmark.presentation.databinding.ItemCommentBinding
 import com.bookmark.presentation.features.home.adapter.CommentDiffUtilCallback
 import org.w3c.dom.Comment
 
-class CommentAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, ItemCommentBinding>(
+class ClubListAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, ItemCommentBinding>(
     R.layout.item_comment,
     CommentDiffUtilCallback ){
 
