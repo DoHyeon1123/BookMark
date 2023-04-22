@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.bookmark.presentation.util.Resource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.onEach
 
@@ -22,7 +21,7 @@ open class BaseViewModel : ViewModel(){
         }
     }
 
-    fun <T> Flow<Resource<T>>.divideResult(
+    /*fun <T> Flow<Resource<T>>.divideResult(
         isLoading: MutableLiveData<Boolean>,
         successAction: (T?) -> Unit,
         errorAction: (String?) -> Unit
@@ -40,6 +39,6 @@ open class BaseViewModel : ViewModel(){
                     errorAction.invoke(resource.message)
             }
         }
-    }
+    }*/
 
 }

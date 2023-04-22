@@ -5,28 +5,30 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bookmark.databinding.FragmentCommentBinding
-import com.example.bookmark.domain.model.Comment
-import com.example.bookmark.presentation.base.BaseFragment
-import com.example.bookmark.presentation.features.comment.adapter.CommentAdapter
+import com.bookmark.domain.model.Comment
+import com.bookmark.presentation.base.BaseFragment
+import com.bookmark.presentation.databinding.FragmentCommentBinding
+import com.bookmark.presentation.features.comment.adapter.ClubListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CommentFragment : BaseFragment<FragmentCommentBinding, CommentViewModel>(),CommentAdapter.CallBack {
-    override val viewModel: CommentViewModel by viewModels()
-    private val adapter = CommentAdapter(this)
+
+
+class CommentFragment() : BaseFragment<FragmentCommentBinding, HomeViewModel>(), ClubListAdapter.CallBack {
+    override val viewModel : HomeViewModel by viewModels()
+    private val adapter = ClubListAdapter(this)
 
     private val args: CommentFragmentArgs by navArgs()
 
     override fun onStart() {
         super.onStart()
         viewModel.getComment(args.bookId)
-        mBinding.rvComment.adapter = adapter
-        mBinding.rvComment.layoutManager =LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+        binding.rvComment.adapter = adapter
+        binding.rvComment.layoutManager =LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
     }
 
     override fun observerViewModel() {
-        mBinding.btnComment.setOnClickListener{
+        binding.btnComment.setOnClickListener{
             viewModel.addComment(args.bookId)
         }
 

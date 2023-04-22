@@ -3,42 +3,46 @@ package com.bookmark.presentation.features.home.view
 import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.bookmark.databinding.FragmentHomeBinding
-import com.example.bookmark.domain.model.Book
-import com.example.bookmark.presentation.base.BaseFragment
-import com.example.bookmark.presentation.features.home.adapter.HomeAdapter
+import com.bookmark.presentation.base.BaseFragment
+import com.bookmark.presentation.databinding.FragmentCommentBinding
+import com.bookmark.presentation.features.comment.adapter.ClubListAdapter
+import com.bookmark.presentation.features.comment.view.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import org.w3c.dom.Comment
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAdapter.CallBack{
+class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), ClubListAdapter.CallBack {
     override val viewModel: HomeViewModel by viewModels()
-    private val adapter = HomeAdapter(this)
+    private val adapter = ClubListAdapter(this)
+
+    private val args: CommentFragmentArgs by navArgs()
+
     override fun onStart() {
         super.onStart()
-        viewModel.searchBooks()
-        mBinding.rvBookList.adapter = adapter
-        mBinding.rvBookList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+        viewModel.getComment(args.bookId)
+        binding.rvComment.adapter = adapter
+        binding.rvComment.layoutManager =LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
     }
 
     override fun observerViewModel() {
-        Log.e("HomeFragment","실행됨")
-        mBinding.btnSearch.setOnClickListener {
-            Log.e("HomeFragment","검색")
-            viewModel.searchBooks()
+        binding.btnComment.setOnClickListener{
+            viewModel.addComment(args.bookId)
         }
-        with(viewModel) {
-            bookList.observe(
+
+        with(viewModel){
+            commentList.observe(
                 viewLifecycleOwner,
-                Observer<List<Book>> {
-                    Log.e("LostFoundFragment", it.toString())
+                Observer<List<Comment>> {
+                    Log.e("LibraryFragment", it.toString())
                     adapter.submitList(it)
                 }
             )
         }
     }
 
-    override fun addBook(info: Book) {
-        viewModel.addBookInLibrary(info)
+    override fun deleteComment(info: Comment) {
+        viewModel.deleteComment(info.bookId, info.id)
     }
 }
