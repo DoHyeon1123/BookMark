@@ -3,49 +3,49 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object Libraries {
 
+    val GRADLE = "com.android.tools.build:gradle:${Versions.GRADLE}"
+    val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE_PLUGIN}"
+    val NAVIGATION = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.AndroidX.NAVIGATION}"
+
     //Android
     private val appcompat = "androidx.appcompat:appcompat:${Versions.AndroidX.APP_COMPAT}"
     private val coreKtx = "androidx.core:core-ktx:${Versions.AndroidX.CORE_KTX}"
     private val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.AndroidX.CONSTRAINT_LAYOUT}"
-    private val material = "com.google.android.material:material:1.8.0"
-    private val activityKtx = "androidx.activity:activity-ktx:1.7.0"
-    private val fragmentKtx = "androidx.fragment:fragment-ktx:1.5.6"
-    private val glide = "com.github.bumptech.glide:glide:4.14.2"
-    private val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:2.5.3"
-    private val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:2.5.3"
-
-    val GRADLE = "com.android.tools.build:gradle:7.4.1"
-    val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
-    val NAVIGATION = "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
+    private val material = "com.google.android.material:material:${Versions.Google.MATERIAL}"
+    private val activityKtx = "androidx.activity:activity-ktx:${Versions.AndroidX.ACTIVITY_KTX}"
+    private val fragmentKtx = "androidx.fragment:fragment-ktx:${Versions.AndroidX.FRAGMENT_KTX}"
+    private val glide = "com.github.bumptech.glide:glide:${Versions.ThirdParty.GLIDE}"
+    private val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidX.NAVIGATION}"
+    private val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.AndroidX.NAVIGATION}"
 
     //Test
-    private val junit = "junit:junit:4.13.2"
+    private val junit = "junit:junit:${Versions.Test.JUNIT}"
 
     //AndroidTest
-    private val testJunit = "androidx.test.ext:junit:1.1.5"
-    private val espresso = "androidx.test.espresso:espresso-core:3.5.1"
+    private val testJunit = "androidx.test.ext:junit:${Versions.AndroidTest.TEST_JUNIT}"
+    private val espresso = "androidx.test.espresso:espresso-core:${Versions.AndroidTest.ESPRESSO}"
 
     //Network
-    private val retrofit = "com.squareup.retrofit2:retrofit:2.9.0"
-    private val gsonConverter = "com.squareup.retrofit2:converter-gson:2.9.0"
-    private val okhttp3 = "com.squareup.okhttp3:okhttp:4.10.0"
-    private val okhttp3LogginInterceptor = "com.squareup.okhttp3:logging-interceptor:4.9.0"
+    private val retrofit = "com.squareup.retrofit2:retrofit:${Versions.ThirdParty.RETROFIT}"
+    private val gsonConverter = "com.squareup.retrofit2:converter-gson:${Versions.ThirdParty.RETROFIT}"
+    private val okhttp3 = "com.squareup.okhttp3:okhttp:${Versions.ThirdParty.OKHTTP3}"
+    private val okhttp3LogginInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.ThirdParty.OKHTTP3}"
 
     //Kapt
-    private val glideCompiler = "com.github.bumptech.glide:compiler:4.13.0"
-    private val hiltCompiler = "com.google.dagger:hilt-android-compiler:2.44"
-    private val roomCompiler = "androidx.room:room-compiler:2.5.1"
+    private val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.ThirdParty.GLIDE}"
+    private val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.Google.HILT}"
+    private val roomCompiler = "androidx.room:room-compiler:${Versions.AndroidX.ROOM}"
 
     //Async
-    private val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+    private val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Jetbrains.COROUTINES}"
 
     //DI
-    private val hilt = "com.google.dagger:hilt-android:2.44"
+    private val hilt = "com.google.dagger:hilt-android:${Versions.Google.HILT}"
 
     //Room
-    private val roomKtx = "androidx.room:room-ktx:2.5.1"
-    private val roomRuntime = "androidx.room:room-runtime:2.5.1"
+    private val roomKtx = "androidx.room:room-ktx:${Versions.AndroidX.ROOM}"
+    private val roomRuntime = "androidx.room:room-runtime:${Versions.AndroidX.ROOM}"
 
 
     val async = arrayListOf<String>().apply{
