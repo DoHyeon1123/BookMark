@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -39,6 +40,7 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":local"))
     implementation(project(":remote"))
+    implementation("androidx.core:core-ktx:+")
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)

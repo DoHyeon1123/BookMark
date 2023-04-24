@@ -41,6 +41,7 @@ dependencies {
     implementation(project(":remote"))
     implementation(project(":local"))
     implementation(project(":presentation"))
+    implementation("androidx.core:core-ktx:+")
 
 
     testImplementation(Libraries.test)

@@ -3,10 +3,6 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object Libraries {
 
-    val GRADLE = "com.android.tools.build:gradle:7.4.1"
-    val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
-    val NAVIGATION = "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
-
     //Android
     private val appcompat = "androidx.appcompat:appcompat:${Versions.AndroidX.APP_COMPAT}"
     private val coreKtx = "androidx.core:core-ktx:${Versions.AndroidX.CORE_KTX}"
@@ -18,6 +14,10 @@ object Libraries {
     private val glide = "com.github.bumptech.glide:glide:4.14.2"
     private val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:2.5.3"
     private val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:2.5.3"
+
+    val GRADLE = "com.android.tools.build:gradle:7.4.1"
+    val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.20"
+    val NAVIGATION = "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.3"
 
     //Test
     private val junit = "junit:junit:4.13.2"
