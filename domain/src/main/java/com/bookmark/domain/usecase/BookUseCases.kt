@@ -1,6 +1,5 @@
 package com.bookmark.domain.usecase
 
-import com.bookmark.domain.model.Book
 import com.bookmark.domain.usecase.club.*
 import com.bookmark.domain.usecase.club.feed.*
 import com.bookmark.domain.usecase.club.member.AddMember

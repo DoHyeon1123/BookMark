@@ -1,6 +1,6 @@
 package com.bookmark.presentation.features.profile.adapter
 
-import com.bookmark.domain.model.Book
+import com.bookmark.domain.model.book.Book
 import com.bookmark.presentation.R
 import com.bookmark.presentation.base.BaseListAdapter
 import com.bookmark.presentation.databinding.ItemLibraryBinding

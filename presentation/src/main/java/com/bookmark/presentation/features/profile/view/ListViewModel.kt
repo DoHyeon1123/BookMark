@@ -1,7 +1,7 @@
 package com.bookmark.presentation.features.profile.view
 
 import androidx.lifecycle.MutableLiveData
-import com.bookmark.domain.model.Book
+import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.usecase.BookUseCases
 import com.bookmark.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

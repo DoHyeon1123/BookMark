@@ -1,4 +1,4 @@
-package com.bookmark.domain.model
+package com.bookmark.domain.model.profile
 
 data class Comment(
     var comment : String,

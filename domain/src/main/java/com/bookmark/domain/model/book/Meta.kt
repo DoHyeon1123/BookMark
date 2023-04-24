@@ -1,4 +1,4 @@
-package com.bookmark.domain.model
+package com.bookmark.domain.model.book
 
 data class Meta(
     val is_end : Boolean,

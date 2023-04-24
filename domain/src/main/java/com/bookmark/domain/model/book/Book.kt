@@ -1,4 +1,4 @@
-package com.bookmark.domain.model
+package com.bookmark.domain.model.book
 
 data class Book(
     var id : String,
