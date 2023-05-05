@@ -40,7 +40,6 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":local"))
     implementation(project(":remote"))
-    implementation("androidx.core:core-ktx:+")
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)

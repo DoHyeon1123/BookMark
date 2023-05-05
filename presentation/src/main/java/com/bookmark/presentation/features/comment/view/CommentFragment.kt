@@ -9,6 +9,7 @@ import com.bookmark.domain.model.profile.Comment
 import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentCommentBinding
 import com.bookmark.presentation.features.comment.adapter.ClubListAdapter
+import com.bookmark.presentation.features.home.view.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -51,7 +51,6 @@ dependencies {
     implementation(project(":domain"))
 
     implementation(Libraries.network)
-    implementation("androidx.core:core-ktx:+")
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)
     implementation(Libraries.di)

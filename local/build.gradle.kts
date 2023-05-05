@@ -37,7 +37,6 @@ android {
 
 dependencies {
     implementation(project(":domain"))
-    implementation("androidx.core:core-ktx:+")
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)

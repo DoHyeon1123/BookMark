@@ -1,11 +1,7 @@
-package com.bookmark.presentation.features.comment.view
+package com.bookmark.presentation.features.home.view
 
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
-import com.bookmark.presentation.base.BaseViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
-import
-import javax.inject.Inject
+
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
