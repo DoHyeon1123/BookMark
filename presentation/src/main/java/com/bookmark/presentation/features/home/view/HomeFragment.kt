@@ -16,14 +16,14 @@ class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), Club
     override val viewModel: HomeViewModel by viewModels()
     private val adapter = ClubListAdapter(this)
 
-    private val args: CommentFragmentArgs by navArgs()
+    //private val args: CommentFragmentArgs by navArgs()
 
-    override fun onStart() {
+    /*override fun onStart() {
         super.onStart()
         viewModel.getComment(args.bookId)
         binding.rvComment.adapter = adapter
         binding.rvComment.layoutManager =LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
-    }
+    }*/
 
     override fun observerViewModel() {
         binding.btnComment.setOnClickListener{
@@ -41,7 +41,7 @@ class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), Club
         }
     }
 
-    override fun deleteComment(info: Comment) {
+    /*override fun deleteComment(info: Comment) {
         viewModel.deleteComment(info.bookId, info.id)
-    }
+    }?8
 }
