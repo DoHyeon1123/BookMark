@@ -4,6 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import com.bookmark.domain.model.profile.Comment
 import com.bookmark.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
