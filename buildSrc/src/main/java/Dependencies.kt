@@ -3,10 +3,6 @@ import org.gradle.api.artifacts.dsl.DependencyHandler
 
 object Libraries {
 
-    val GRADLE = "com.android.tools.build:gradle:${Versions.GRADLE}"
-    val KOTLIN_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN_GRADLE_PLUGIN}"
-    val NAVIGATION = "androidx.navigation:navigation-safe-args-gradle-plugin:${Versions.AndroidX.NAVIGATION}"
-
     //Android
     private val appcompat = "androidx.appcompat:appcompat:${Versions.AndroidX.APP_COMPAT}"
     private val coreKtx = "androidx.core:core-ktx:${Versions.AndroidX.CORE_KTX}"
