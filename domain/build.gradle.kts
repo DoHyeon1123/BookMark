@@ -1,7 +1,6 @@
 plugins {
     id("com.android.library")
-    id("org.jetbrains.kotlin.android")
-
+    id("kotlin-android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
 }
@@ -11,7 +10,7 @@ android {
     compileSdk = 33
 
     defaultConfig {
-        minSdk = 24
+        minSdk = 31
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -24,11 +23,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 }
 
@@ -42,4 +41,13 @@ dependencies {
     kapt(Libraries.kapt)
 
 
+}
+
+repositories {
+    gradlePluginPortal()
+    google()
+    mavenCentral()
+    maven { url = uri("https://maven.google.com") }
+    maven { url = uri("https://maven.fabric.io/public") }
+    maven { url = uri("https://jitpack.io") }
 }
