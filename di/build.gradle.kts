@@ -3,6 +3,7 @@ plugins {
     id("kotlin-android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -26,11 +27,12 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
 }
 
@@ -40,7 +42,6 @@ dependencies {
     implementation(project(":remote"))
     implementation(project(":local"))
     implementation(project(":presentation"))
-
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)

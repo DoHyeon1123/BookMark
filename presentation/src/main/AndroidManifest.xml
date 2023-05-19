@@ -11,8 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BookMark"
-        tools:targetApi="31"
-        android:name="com.bookmark.presentation.MainApplication">
+        tools:targetApi="33">
         <activity
             android:name="com.bookmark.presentation.features.main.view.MainActivity"
             android:exported="true">

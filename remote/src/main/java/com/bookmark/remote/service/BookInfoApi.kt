@@ -1,5 +1,6 @@
 package com.bookmark.remote.service
 
+import com.bookmark.remote.response.BookResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -11,5 +12,5 @@ interface BookInfoApi {
     fun searchBookInfo(
         @Header("Authorization") key: String,
         @Query("query") query : String
-    ) : Call<com.bookmark.presentation.data.book.BookResponse>
+    ) : Call<BookResponse>
 }

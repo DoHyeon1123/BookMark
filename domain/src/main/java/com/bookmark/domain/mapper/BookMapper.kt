@@ -1,10 +1,13 @@
 package com.bookmark.domain.mapper
 
-import com.example.bookmark.domain.model.Book
-import com.example.bookmark.domain.model.Comment
+import com.bookmark.domain.model.book.Book
+import com.bookmark.domain.model.book.Document
+import com.bookmark.domain.model.profile.Comment
+import com.bookmark.local.entity.BookEntity
+import com.bookmark.local.entity.CommentEntity
 
 class BookMapper {
-    fun mapDocumentToBook(list : List<com.bookmark.presentation.data.book.Document>) : List<Book>{
+    fun mapDocumentToBook(list : List<Document>) : List<Book>{
         val newList : MutableList<Book> = arrayListOf()
         list.map {
             newList.add(
@@ -21,7 +24,7 @@ class BookMapper {
         return newList
     }
 
-    fun mapEntityToBook(list : List<com.bookmark.presentation.data.db.BookEntity>) : List<Book>{
+    fun mapEntityToBook(list : List<BookEntity>) : List<Book>{
         val newList : MutableList<Book> = arrayListOf()
         list.map {
             newList.add(
@@ -38,7 +41,7 @@ class BookMapper {
         return newList
     }
 
-    fun mapEntityToComment(list : List<com.bookmark.presentation.data.db.CommentEntity>) : List<Comment>{
+    fun mapEntityToComment(list : List<CommentEntity>) : List<Comment>{
         val newList : MutableList<Comment> = arrayListOf()
         list.map {
             newList.add(
@@ -53,7 +56,7 @@ class BookMapper {
         return newList
     }
 
-    fun mapEntityToBook(entity : com.bookmark.presentation.data.db.BookEntity) : Book {
+    fun mapEntityToBook(entity : BookEntity) : Book {
         return Book(
             title = entity.title,
             image = entity.image,

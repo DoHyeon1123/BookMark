@@ -1,8 +1,11 @@
+import com.android.build.api.dsl.AaptOptions
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
     kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
@@ -21,17 +24,20 @@ android {
     buildTypes {
         named("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "1.8"
     }
     dataBinding {
         enable = true
@@ -42,11 +48,13 @@ dependencies {
     implementation(project(":domain"))
 
     implementation(Libraries.app)
+    implementation("androidx.core:core-ktx:+")
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)
     implementation(Libraries.di)
     implementation(Libraries.async)
     kapt(Libraries.kapt)
+    kapt("org.xerial:sqlite-jdbc:3.34.0")
 
 }
 
