@@ -1,13 +1,19 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
-        maven { url = uri("https://maven.google.com") }
-        maven { url = uri("https://maven.fabric.io/public") }
-        maven { url = uri("https://jitpack.io") }
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
     }
 }
 rootProject.name = "BookMark"
-
-include(":presentation", ":domain",":di",":local",":remote",":data")
+include(":presentation")
+include(":di")
+include(":domain")
+include(":data")

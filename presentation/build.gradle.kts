@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.AaptOptions
-
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -25,19 +23,19 @@ android {
         named("release") {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
             )
         }
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     dataBinding {
         enable = true
@@ -48,25 +46,10 @@ dependencies {
     implementation(project(":domain"))
 
     implementation(Libraries.app)
-    implementation("androidx.core:core-ktx:+")
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)
     implementation(Libraries.di)
     implementation(Libraries.async)
     kapt(Libraries.kapt)
-    kapt("org.xerial:sqlite-jdbc:3.34.0")
 
-}
-
-kapt {
-    correctErrorTypes = true
-}
-
-repositories {
-    gradlePluginPortal()
-    google()
-    mavenCentral()
-    maven { url = uri("https://maven.google.com") }
-    maven { url = uri("https://maven.fabric.io/public") }
-    maven { url = uri("https://jitpack.io") }
 }

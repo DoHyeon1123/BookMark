@@ -24,35 +24,23 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
 }
 
 dependencies {
     implementation(project(":data"))
-    implementation(project(":local"))
-    implementation(project(":remote"))
-
-    implementation(Libraries.app)
-    testImplementation(Libraries.test)
-    androidTestImplementation(Libraries.androidTest)
     implementation(Libraries.di)
     implementation(Libraries.async)
+
+    testImplementation(Libraries.test)
+    androidTestImplementation(Libraries.androidTest)
     kapt(Libraries.kapt)
 
 
-}
-
-repositories {
-    gradlePluginPortal()
-    google()
-    mavenCentral()
-    maven { url = uri("https://maven.google.com") }
-    maven { url = uri("https://maven.fabric.io/public") }
-    maven { url = uri("https://jitpack.io") }
 }
