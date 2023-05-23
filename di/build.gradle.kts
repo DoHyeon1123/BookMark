@@ -40,7 +40,9 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
     implementation(project(":presentation"))
+
     implementation(Libraries.di)
+    implementation(Libraries.network)
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)

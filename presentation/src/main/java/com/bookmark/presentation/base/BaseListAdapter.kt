@@ -5,13 +5,13 @@ import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
-import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bookmark.presentation.features.comment.adapter.ClubDiffUtilCallback
 
 abstract class BaseListAdapter<T : Any, B : ViewDataBinding>(
     @LayoutRes private val itemLayoutRes: Int,
-    diffUtil: DiffUtil.ItemCallback<T>
+    diffUtil: ClubDiffUtilCallback
 ) : ListAdapter<T, BaseListAdapter<T, B>.BaseViewHolder>(diffUtil) {
 
     inner class BaseViewHolder(private val binding: B) : RecyclerView.ViewHolder(binding.root) {
