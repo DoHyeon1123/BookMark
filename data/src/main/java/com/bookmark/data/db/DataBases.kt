@@ -1,13 +1,12 @@
-package com.bookmark.local.db
+package com.bookmark.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.bookmark.local.entity.BookEntity
-import com.bookmark.local.entity.CommentEntity
-import com.example.bookmark.data.db.dao.BookDao
-import java.util.concurrent.Executors
+import com.bookmark.data.db.dao.BookDao
+import com.bookmark.data.db.entity.BookEntity
+import com.bookmark.data.db.entity.CommentEntity
 
 class DataBases {
     @Database(entities = [BookEntity::class, CommentEntity::class], version = 2,exportSchema = false)//version은 구조 변경 시 구버전과 구분할 수 있도록 해준다.
@@ -27,9 +26,9 @@ class DataBases {
                     context.applicationContext,
                     BookMarkDatabase::class.java, "book_database"
                 )
-                    .setQueryCallback({ sqlQuery, bindArgs ->
+                   /* .setQueryCallback({ sqlQuery, bindArgs ->
                         println("SQL Query: $sqlQuery SQL Args: $bindArgs")
-                    }, Executors.newSingleThreadExecutor())
+                    }, Executors.newSingleThreadExecutor())*/
                     .fallbackToDestructiveMigration()
                     .allowMainThreadQueries()
                     .build()

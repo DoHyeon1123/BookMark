@@ -1,4 +1,4 @@
-package com.bookmark.local.entity
+package com.bookmark.data.db.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey

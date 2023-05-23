@@ -3,7 +3,7 @@ package com.bookmark.presentation.features.club.view
 import android.telecom.Call
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.bookmark.domain.mapper.BookMapper
+import com.bookmark.data.mapper.BookMapper
 import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.response.BookResponse
 import com.bookmark.domain.usecase.BookUseCases
@@ -20,7 +20,7 @@ class ClubViewModel @Inject constructor(
     val bookList = MutableLiveData<List<Book>>()
     val query = MutableLiveData<String>()
 
-    val mapper = BookMapper()
+    val mapper = com.bookmark.data.mapper.BookMapper()
 
     fun searchBooks(){
             useCases.searchBooks(query.value ?: "책갈피").enqueue(object : retrofit2.Callback<BookResponse>{

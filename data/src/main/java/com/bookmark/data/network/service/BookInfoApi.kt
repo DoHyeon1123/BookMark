@@ -1,6 +1,6 @@
-package com.bookmark.remote.service
+package com.bookmark.data.network.service
 
-import com.bookmark.remote.response.BookResponse
+import com.bookmark.data.network.response.BookResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header

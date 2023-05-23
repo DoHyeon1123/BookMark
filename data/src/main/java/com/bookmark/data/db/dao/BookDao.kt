@@ -1,9 +1,9 @@
-package com.bookmark.local.dao
+package com.bookmark.data.db.dao
 
 import androidx.room.Dao
 import androidx.room.Query
-import com.bookmark.local.entity.BookEntity
-import com.bookmark.local.entity.CommentEntity
+import com.bookmark.data.db.entity.BookEntity
+import com.bookmark.data.db.entity.CommentEntity
 
 @Dao
 interface BookDao {

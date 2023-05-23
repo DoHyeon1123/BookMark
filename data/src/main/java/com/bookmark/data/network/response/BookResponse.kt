@@ -1,4 +1,4 @@
-package com.bookmark.remote.response
+package com.bookmark.data.network.response
 
 import com.bookmark.domain.model.book.Document
 import com.bookmark.domain.model.book.Meta

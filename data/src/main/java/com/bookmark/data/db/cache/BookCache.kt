@@ -1,8 +1,8 @@
-package com.bookmark.local.cache
+package com.bookmark.data.db.cache
 
 import android.app.Application
-import com.bookmark.local.entity.BookEntity
-import com.bookmark.local.entity.CommentEntity
+import com.bookmark.data.db.entity.BookEntity
+import com.bookmark.data.db.entity.CommentEntity
 import javax.inject.Inject
 
 class BookCache @Inject constructor(application: Application) : BaseCache(application){

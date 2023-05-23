@@ -1,19 +1,19 @@
 package com.bookmark.domain.repository
 
-import com.example.bookmark.domain.model.Book
-import com.example.bookmark.domain.model.Comment
-import retrofit2.Call
+import com.bookmark.domain.model.book.Book
+import com.bookmark.domain.model.profile.Comment
+
 
 interface BookRepository {
     //REST api
-    fun searchBooks(keyWord : String): Call<com.bookmark.presentation.data.book.BookResponse>
+    fun searchBooks(keyWord : String): Book
 
     //Room
     fun addBookInLibrary(info : Book)
 
     fun getBooksInLibrary():List<Book>
 
-    fun getBookInLibrary(id : String):Book
+    fun getBookInLibrary(id : String): Book
     fun updateBookInLibrary(info : Book)
     fun deleteBookInLibrary(id: String)
 

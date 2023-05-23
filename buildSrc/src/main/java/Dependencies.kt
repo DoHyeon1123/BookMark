@@ -29,9 +29,9 @@ object Libraries {
     private val okhttp3LogginInterceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.ThirdParty.OKHTTP3}"
 
     //Kapt
-    private val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.ThirdParty.GLIDE}"
-    private val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.Google.HILT}"
-    private val roomCompiler = "androidx.room:room-compiler:${Versions.AndroidX.ROOM}"
+    val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.ThirdParty.GLIDE}"
+    val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.Google.HILT}"
+    val roomCompiler = "androidx.room:room-compiler:${Versions.AndroidX.ROOM}"
 
     //Async
     private val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Jetbrains.COROUTINES}"
