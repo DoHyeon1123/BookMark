@@ -32,7 +32,7 @@ object Versions {
 
     object ThirdParty {
         const val RETROFIT = "2.9.0"
-        const val GLIDE = "4.14.2"
+        const val GLIDE = "4.15.1"
         const val OKHTTP3 = "4.10.0"
     }
 

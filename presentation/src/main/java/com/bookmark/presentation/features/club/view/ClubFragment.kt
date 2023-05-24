@@ -6,10 +6,6 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentHomeBinding
-import com.example.bookmark.databinding.FragmentHomeBinding
-import com.example.bookmark.domain.model.Book
-import com.example.bookmark.presentation.base.BaseFragment
-import com.example.bookmark.presentation.features.home.adapter.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

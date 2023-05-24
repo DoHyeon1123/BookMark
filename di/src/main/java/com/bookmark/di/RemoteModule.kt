@@ -1,4 +1,4 @@
-package com.bookmark.di.module
+package com.bookmark.di
 
 import dagger.Module
 import dagger.Provides

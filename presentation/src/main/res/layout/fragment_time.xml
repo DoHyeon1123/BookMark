@@ -5,7 +5,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.bookmark.presentation.features.timer.TimeViewModel" />
+            type="com.bookmark.presentation.features.club.view.ClubViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

@@ -1,5 +1,7 @@
 package com.bookmark.presentation.base
 
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
@@ -20,6 +22,7 @@ abstract class BaseListAdapter<T : Any, B : ViewDataBinding>(
         }
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
         return BaseViewHolder(
             DataBindingUtil.inflate(
@@ -36,4 +39,21 @@ abstract class BaseListAdapter<T : Any, B : ViewDataBinding>(
     }
 
     abstract fun action(item: T, binding: B)
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeInt(itemLayoutRes)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<BaseListAdapter> {
+        override fun createFromParcel(parcel: Parcel): BaseListAdapter {
+            return BaseListAdapter(parcel)
+        }
+
+        override fun newArray(size: Int): Array<BaseListAdapter?> {
+            return arrayOfNulls(size)
+        }
+    }
 }

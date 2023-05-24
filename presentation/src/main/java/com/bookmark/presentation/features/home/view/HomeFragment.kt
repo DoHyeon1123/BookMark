@@ -27,10 +27,10 @@ class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), Club
 
     override fun observerViewModel() {
         binding.btnComment.setOnClickListener{
-            viewModel.addComment(args.bookId)
+            //viewModel.addComment(args.bookId)
         }
 
-        with(viewModel){
+        /*with(viewModel){
             commentList.observe(
                 viewLifecycleOwner,
                 Observer<List<Comment>> {
@@ -38,10 +38,10 @@ class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), Club
                     adapter.submitList(it)
                 }
             )
-        }
+        }*/
     }
 
-    /*override fun deleteComment(info: Comment) {
-        viewModel.deleteComment(info.bookId, info.id)
-    }?8
+    override fun deleteComment(info: Comment) {
+        TODO("Not yet implemented")
+    }
 }

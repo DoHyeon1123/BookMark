@@ -6,7 +6,7 @@
     <data>
         <variable
             name="info"
-            type="com.example.bookmark.domain.model.Comment" />
+            type="com.bookmark.domain.model.profile.Comment" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

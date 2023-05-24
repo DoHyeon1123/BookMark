@@ -1,4 +1,4 @@
-package com.bookmark.di.module
+package com.bookmark.di
 
 import com.bookmark.domain.repository.BookRepository
 import com.bookmark.domain.usecase.BookUseCases
