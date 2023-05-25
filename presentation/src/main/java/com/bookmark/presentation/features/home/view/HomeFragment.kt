@@ -2,15 +2,17 @@ package com.bookmark.presentation.features.home.view
 
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentCommentBinding
+import com.bookmark.presentation.databinding.FragmentHomeBinding
 import com.bookmark.presentation.features.comment.adapter.CommentAdapter
 import com.bookmark.presentation.features.home.adapter.HomeAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), HomeAdapter.CallBack {
+class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAdapter.CallBack {
     override val viewModel: HomeViewModel by viewModels()
     private val adapter = HomeAdapter(this)
 
@@ -19,13 +21,13 @@ class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), Home
     override fun onStart() {
         super.onStart()
         //viewModel.getComment(args.bookId)
-        binding.rvComment.adapter = adapter
-        binding.rvComment.layoutManager =
+        binding.rvBookList.adapter = adapter
+        binding.rvBookList.layoutManager =
             LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
     }
 
     override fun observerViewModel() {
-        binding.btnComment.setOnClickListener{
+        binding.btnSearch.setOnClickListener{
             //viewModel.addComment(args.bookId)
         }
 
@@ -39,7 +41,7 @@ class HomeFragment : BaseFragment<FragmentCommentBinding, HomeViewModel>(), Home
             )
         }*/
     }
-    override fun deleteComment(info: Comment) {
+    override fun deleteComment(info: Book) {
         TODO("Not yet implemented")
     }
 }
