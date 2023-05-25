@@ -1,23 +1,24 @@
 package com.bookmark.presentation.repository
 
-import com.bookmark.data.repository.BookRepository
-import com.bookmark.data.response.BookResponse
-import retrofit2.Call
+
+import com.bookmark.domain.model.book.Book
+import com.bookmark.domain.model.profile.Comment
+import com.bookmark.domain.repository.BookRepository
 import javax.inject.Inject
 
-class BookRepositoryImpl @Inject constructor(
+/*class BookRepositoryImpl @Inject constructor(
     private val dataSource: BookInfoDataSource
     ) : BookRepository {
 
-    override fun searchBooks(keyWord: String): Call<BookResponse> {
+    override fun searchBooks(keyWord: String): Book {
         return dataSource.searchBooks(keyWord)
     }
 
-    override fun addBookInLibrary(info: BookResponse) {
+    override fun addBookInLibrary(info: Book) {
         dataSource.addBookInLibrary(info)
     }
 
-    override fun getBooksInLibrary(): List<BookResponse> {
+    override fun getBooksInLibrary(): List<Book> {
         return dataSource.getBooksInLibrary()
     }
 
@@ -48,4 +49,4 @@ class BookRepositoryImpl @Inject constructor(
     override fun deleteComment(bookId:String, id: Int) {
         dataSource.deleteComment(bookId,id)
     }
-}
+}*/
