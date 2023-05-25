@@ -13,7 +13,7 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object ApiModule {
+class ApiModule {
 
 
     object Constants { //TODO 삭제해야 함 아키텍처 구축 후 위치 이동하기
@@ -27,12 +27,12 @@ object ApiModule {
 
     @Singleton
     @Provides
-    fun provideOkHttpClient() {
+    fun provideOkHttpClient() : OkHttpClient{
 
         //loggingIterceptor를 사용해 Body 레벨 Response를 logging합니다.
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        OkHttpClient.Builder()
+        return OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
     }
