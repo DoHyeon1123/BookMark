@@ -1,5 +1,7 @@
 package com.bookmark.di
 
+import com.bookmark.data.network.remote.BookInfoRemote
+import com.bookmark.data.network.service.BookInfoApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -10,10 +12,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class RemoteModule {
-    /*@Singleton
+    @Singleton
     @Provides
-    fun provideBookInfoRemote(retrofit: Retrofit): com.bookmark.presentation.data.api.remote.BookInfoRemote =
-        com.bookmark.presentation.data.api.remote.BookInfoRemote(retrofit.create(com.bookmark.presentation.data.api.service.BookInfoApi::class.java))
+    fun provideBookInfoRemote(@RemoteRetrofit retrofit: Retrofit): BookInfoRemote =
+        BookInfoRemote(retrofit.create(BookInfoApi::class.java))
 
-     */
+
 }

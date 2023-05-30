@@ -46,6 +46,7 @@ class NetworkModule {
         return okhttpBuilder.build()
     }
 
+    @RemoteRetrofit
     @Provides
     @Singleton
     fun provideRetrofit(gson: Gson, @OtherOkHttpClient client : OkHttpClient) : Retrofit {
