@@ -8,7 +8,7 @@ import com.bookmark.presentation.features.home.adapter.BookInfoDiffUtilCallback
 
 class CommentAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, ItemCommentBinding>(
     R.layout.item_comment,
-    BookInfoDiffUtilCallback ){
+    ClubDiffUtilCallback ){
 
     interface CallBack{
         fun deleteComment(info : Comment)

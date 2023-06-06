@@ -6,6 +6,10 @@ plugins {
     kotlin("kapt")
 }
 
+kotlin {
+    jvmToolchain(11)
+}
+
 android {
     namespace = "com.bookmark.presentation"
     compileSdk = 33

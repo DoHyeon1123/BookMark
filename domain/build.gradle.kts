@@ -6,6 +6,10 @@ plugins {
     kotlin("kapt")
 }
 
+kotlin {
+    jvmToolchain(11)
+}
+
 android {
     namespace = "com.bookmark.domain"
     compileSdk = 33
