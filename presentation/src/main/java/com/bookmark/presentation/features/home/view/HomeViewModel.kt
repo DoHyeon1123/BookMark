@@ -1,11 +1,12 @@
 package com.bookmark.presentation.features.home.view
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.usecase.BookUseCases
+import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import javax.inject.Inject
 
 
@@ -16,6 +17,14 @@ class HomeViewModel @Inject constructor(
     val comment = MutableLiveData<String>()
     val commentList = MutableLiveData<List<Comment>>()
 
+    suspend fun searchBook(query : String) {
+        useCases.searchBooks(SearchBooks.Params(query)).getOrElse {
+
+        }.collect{
+
+        }
+
+    }
     /*fun deleteComment(bookId : String, id : Int){
         useCases.deleteComment(bookId, id)
         getComment(bookId)

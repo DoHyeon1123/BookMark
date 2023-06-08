@@ -28,7 +28,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAda
 
     override fun observerViewModel() {
         binding.btnSearch.setOnClickListener{
-            //viewModel.addComment(args.bookId)
+            viewModel.addComment(args.bookId)
         }
 
         /*with(viewModel){
@@ -42,6 +42,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAda
         }*/
     }
     override fun deleteComment(info: Book) {
-        TODO("Not yet implemented")
+
     }
 }

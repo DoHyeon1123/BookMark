@@ -1,5 +1,6 @@
 package com.bookmark.domain.usecase
 
+import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.usecase.club.*
 import com.bookmark.domain.usecase.club.feed.*
 import com.bookmark.domain.usecase.club.member.AddMember
@@ -7,7 +8,7 @@ import com.bookmark.domain.usecase.club.member.DeleteMember
 import com.bookmark.domain.usecase.club.member.GetMembers
 import com.bookmark.domain.usecase.club.member.UpdateMember
 import com.bookmark.domain.usecase.main.books.GetBooks
-import com.bookmark.domain.usecase.main.books.GetBooksBySearch
+import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.domain.usecase.profile.GetProfileInfo
 import com.bookmark.domain.usecase.profile.UpdateProfileInfo
 import com.bookmark.domain.usecase.profile.goal.AddReadingGoal
@@ -21,6 +22,7 @@ import com.bookmark.domain.usecase.profile.library.comment.AddComment
 import com.bookmark.domain.usecase.profile.library.comment.DeleteComment
 import com.bookmark.domain.usecase.profile.library.comment.GetComments
 import com.bookmark.domain.usecase.profile.library.comment.UpdateComment
+import kotlinx.coroutines.flow.Flow
 
 data class BookUseCases(
 
@@ -47,7 +49,7 @@ data class BookUseCases(
     // Main
     // 책 정보
     val getBooks: GetBooks,
-    val getBooksBySearch: GetBooksBySearch,
+    val searchBooks: SearchBooks,
 
     // Profile
     // 내 프로필 기능 관련

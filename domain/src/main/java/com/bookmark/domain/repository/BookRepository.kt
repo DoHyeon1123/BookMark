@@ -2,11 +2,12 @@ package com.bookmark.domain.repository
 
 import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.profile.Comment
+import com.bookmark.domain.usecase.main.books.SearchBooks
 
 
 interface BookRepository {
     //REST api
-    fun searchBooks(keyWord : String): Book
+    suspend fun searchBooks(params : SearchBooks.Params): List<Book>
 
     //Room
     fun addBookInLibrary(info : Book)

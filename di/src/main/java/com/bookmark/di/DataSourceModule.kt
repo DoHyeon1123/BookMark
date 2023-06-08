@@ -1,21 +1,19 @@
 package com.bookmark.di
 
+import com.bookmark.data.datasource.BookDataSource
 import com.bookmark.data.network.remote.BookRemote
-import com.bookmark.data.network.service.BookInfoApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-class RemoteModule {
+class DataSourceModule {
     @Singleton
     @Provides
-    fun provideBookInfoRemote(@RemoteRetrofit retrofit: Retrofit): BookRemote =
-        BookRemote(retrofit.create(BookInfoApi::class.java))
-
-
+    fun provideBookDataSource(remote : BookRemote) : BookDataSource {
+        return BookDataSource(remote)
+    }
 }

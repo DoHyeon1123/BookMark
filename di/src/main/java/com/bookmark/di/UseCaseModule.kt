@@ -9,7 +9,7 @@ import com.bookmark.domain.usecase.club.member.DeleteMember
 import com.bookmark.domain.usecase.club.member.GetMembers
 import com.bookmark.domain.usecase.club.member.UpdateMember
 import com.bookmark.domain.usecase.main.books.GetBooks
-import com.bookmark.domain.usecase.main.books.GetBooksBySearch
+import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.domain.usecase.profile.GetProfileInfo
 import com.bookmark.domain.usecase.profile.UpdateProfileInfo
 import com.bookmark.domain.usecase.profile.goal.AddReadingGoal
@@ -60,7 +60,7 @@ class UseCaseModule {
 
             // 책 정보
             getBooks = GetBooks(repository),
-            getBooksBySearch = GetBooksBySearch(repository),
+            searchBooks = SearchBooks(repository),
 
             // 목표
             addReadingGoal = AddReadingGoal(repository),

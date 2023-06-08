@@ -57,4 +57,6 @@ class NetworkModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
+
+    //TODO Network Intterceptor에 헤드로 토큰 달아줘야함 Authzation
 }

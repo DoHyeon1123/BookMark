@@ -1,17 +1,17 @@
 package com.bookmark.data.repository
 
-import com.bookmark.data.network.remote.BookInfoRemote
+import com.bookmark.data.datasource.BookDataSource
+import com.bookmark.data.network.remote.BookRemote
 import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.repository.BookRepository
+import com.bookmark.domain.usecase.main.books.SearchBooks
 import javax.inject.Inject
 
 class BookRepositoryImpl @Inject constructor(
-    private val remote: BookInfoRemote
+    private val dataSource: BookDataSource
 ) : BookRepository  {
-    override fun searchBooks(keyWord: String): Book {
-        TODO("Not yet implemented")
-    }
+    override suspend fun searchBooks(params: SearchBooks.Params): List<Book> = dataSource.searchBooks(params)
 
     override fun addBookInLibrary(info: Book) {
         TODO("Not yet implemented")
