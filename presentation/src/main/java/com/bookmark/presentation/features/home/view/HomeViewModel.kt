@@ -18,11 +18,7 @@ class HomeViewModel @Inject constructor(
     val commentList = MutableLiveData<List<Comment>>()
 
     suspend fun searchBook(query : String) {
-        useCases.searchBooks(SearchBooks.Params(query)).getOrElse {
-
-        }.collect{
-
-        }
+        useCases.searchBooks(SearchBooks.Params(query))
 
     }
     /*fun deleteComment(bookId : String, id : Int){
