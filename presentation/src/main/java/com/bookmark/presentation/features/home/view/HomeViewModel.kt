@@ -1,12 +1,18 @@
 package com.bookmark.presentation.features.home.view
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.usecase.BookUseCases
 import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.presentation.base.BaseViewModel
+import com.bookmark.presentation.features.home.state.GetBooksState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 
@@ -17,9 +23,22 @@ class HomeViewModel @Inject constructor(
     val comment = MutableLiveData<String>()
     val commentList = MutableLiveData<List<Comment>>()
 
-    suspend fun searchBook(query : String) {
-        useCases.searchBooks(SearchBooks.Params(query))
+    private val _getBooksState = MutableStateFlow(GetBooksState())
+    val getBooksState: StateFlow<GetBooksState> = _getBooksState
 
+    fun searchBook(query : String) {
+        viewModelScope.launch {
+            useCases.searchBooks(
+                SearchBooks.Params(query)
+            ).onSuccess {
+                it.collect { data ->
+                    _getBooksState.value.bookList = data
+                    Log.d("HomeViewModel_searchBooks()", data.toString())
+                }
+            }.onFailure {err ->
+                Log.d("HomeViewModel_searchBooks()", err.toString())
+            }
+        }
     }
     /*fun deleteComment(bookId : String, id : Int){
         useCases.deleteComment(bookId, id)

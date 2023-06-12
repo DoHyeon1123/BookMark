@@ -15,9 +15,5 @@ class SearchBooks @Inject constructor(private val repository : BookRepository) {
         flow {
             emit(repository.searchBooks(params))
         }// flow 빌더 안에 값을 반환하는 함수를 emit을 통해 flow 흐름에 흘려보낸다.
-    }.onSuccess {
-        Log.d("SearchBooks_UseCase", it.toString())
-    }.onFailure {
-        Log.e("SearchBooks_UseCase", it.toString())
     }
 }

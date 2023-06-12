@@ -17,6 +17,7 @@ class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book, Item
     }
 
     override fun action(item: Book, binding: ItemSearchResultBinding) {
+        binding.info = item
         binding.root.setOnClickListener {
             listener.deleteComment(item)
         }
