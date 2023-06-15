@@ -17,16 +17,6 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class NetworkModule {
 
-
-    object Constants { //TODO 삭제해야 함 아키텍처 구축 후 위치 이동하기
-        const val API_HOST = ""
-    }
-
-    //Provides는 인스턴스를 Retrofit OkHttp등의 객체를 제공합니다.
-    // Singleton은 싱글톤 객체를 의미합니다.
-    @Provides
-    fun provideBaseUrl() = Constants.API_HOST
-
     @Provides
     @Singleton
     fun provideGson(): Gson {
@@ -53,7 +43,7 @@ class NetworkModule {
         return Retrofit
             .Builder()
             .client(client)
-            .baseUrl(Constants.API_HOST)
+            .baseUrl(Constants.KAKAO_API_HOST)
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }

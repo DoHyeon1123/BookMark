@@ -23,6 +23,7 @@ import com.bookmark.domain.usecase.profile.library.comment.AddComment
 import com.bookmark.domain.usecase.profile.library.comment.DeleteComment
 import com.bookmark.domain.usecase.profile.library.comment.GetComments
 import com.bookmark.domain.usecase.profile.library.comment.UpdateComment
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,12 +33,10 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 class UseCaseModule {
-    @Singleton
     @Provides
-    fun provideBookUseCase(
-        repository : BookRepository
-    ) : BookUseCases{
-        return BookUseCases(
+    @Singleton
+    fun provideBookUseCases(repository : BookRepository) : BookUseCases =
+        BookUseCases(
             // 피드
             addFeed = AddFeed(repository),
             deleteFeed = DeleteFeed(repository),
@@ -83,5 +82,4 @@ class UseCaseModule {
             getProfileInfo = GetProfileInfo(repository),
             updateProfileInfo = UpdateProfileInfo(repository),
         )
-    }
 }

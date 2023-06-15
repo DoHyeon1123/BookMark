@@ -5,7 +5,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.book.Book
-import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentHomeBinding
 import com.bookmark.presentation.features.club.adapter.ClubAdapter
 import dagger.hilt.android.AndroidEntryPoint

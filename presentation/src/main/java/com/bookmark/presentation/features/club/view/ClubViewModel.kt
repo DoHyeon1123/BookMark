@@ -11,7 +11,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class ClubViewModel @Inject constructor(
-    private val useCases: BookUseCases
 ) : BaseViewModel() {
     val bookList = MutableLiveData<List<Book>>()
     val query = MutableLiveData<String>()

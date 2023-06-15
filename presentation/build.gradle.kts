@@ -48,6 +48,7 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":di"))
 
     implementation(Libraries.app)
     testImplementation(Libraries.test)

@@ -6,20 +6,18 @@ import androidx.activity.viewModels
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.bookmark.presentation.R
 import com.bookmark.presentation.base.BaseActivity
 import com.bookmark.presentation.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
-    override val TAG: String
-        get() = TODO("Not yet implemented")
-    override val layoutRes: Int
-        get() = TODO("Not yet implemented")
     override val viewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         initNavigation()
     }
 

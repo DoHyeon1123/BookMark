@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 
 interface BookInfoApi {
-    @GET("/v3/search/book")
+    @GET("search/book")
     suspend fun searchBooks(
         @Query("query") query : String
     ) : Response<BookResponse>

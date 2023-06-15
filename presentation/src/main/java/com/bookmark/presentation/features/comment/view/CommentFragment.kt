@@ -5,7 +5,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.profile.Comment
-import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentCommentBinding
 import com.bookmark.presentation.features.comment.adapter.CommentAdapter
 import com.bookmark.presentation.features.home.view.HomeViewModel
