@@ -14,13 +14,14 @@ import com.bookmark.presentation.databinding.FragmentHomeBinding
 import com.bookmark.presentation.features.home.adapter.HomeAdapter
 import com.bookmark.presentation.features.home.state.GetBooksState
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.StateFlow
 
 @AndroidEntryPoint
 class HomeFragment : Fragment(), HomeAdapter.CallBack {
     private val viewModel: HomeViewModel by viewModels()
     lateinit var binding : FragmentHomeBinding
     private val bookAdapter = HomeAdapter(this)
-    private lateinit var getBooksState : GetBooksState
+    private lateinit var getBooksState : StateFlow<GetBooksState>
     //private val args: CommentFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -39,7 +40,9 @@ class HomeFragment : Fragment(), HomeAdapter.CallBack {
         binding.rvBookList.layoutManager =
             LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
 
-        getBooksState = viewModel.getBooksState.value
+        viewModel.searchBook("추천")
+
+        getBooksState = viewModel.getBooksState
 
         return binding.root
     }
@@ -50,9 +53,9 @@ class HomeFragment : Fragment(), HomeAdapter.CallBack {
     }
     private fun observerViewModel() {
         binding.btnSearch.setOnClickListener {
-            viewModel.searchBook(getBooksState.query)
+            viewModel.searchBook(getBooksState.value.query)
         }
-        bookAdapter.submitList(getBooksState.bookList)
+        bookAdapter.submitList(getBooksState.value.bookList)
     }
 
     override fun deleteComment(info: Book) {
