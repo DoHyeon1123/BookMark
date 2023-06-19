@@ -6,7 +6,9 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -33,6 +35,7 @@ class NetworkModule {
         interceptor.level = HttpLoggingInterceptor.Level.BODY
         val okhttpBuilder = OkHttpClient().newBuilder()
             .addInterceptor(interceptor)
+            .addInterceptor(HeaderInterceptor(Constants.KAKAO_API_KEY))
         return okhttpBuilder.build()
     }
 
@@ -48,5 +51,13 @@ class NetworkModule {
             .build()
     }
 
-    //TODO Network Intterceptor에 헤드로 토큰 달아줘야함 Authzation
+    class HeaderInterceptor constructor(private val token :  String) : Interceptor{
+        override fun intercept(chain: Interceptor.Chain): Response {
+            val token = "KakaoAK $token"
+            val newRequest = chain.request().newBuilder()
+                .addHeader("Authorization", token)
+                .build()
+            return chain.proceed(newRequest)
+        }
+    }
 }
