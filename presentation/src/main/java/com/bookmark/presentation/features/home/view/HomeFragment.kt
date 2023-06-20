@@ -32,6 +32,8 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeA
         mBinding.rvBookList.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
         viewModel.searchBook()
     }
+    //TODO Fragment에서 는 View Event만 처리, ViewModel에서 실질적인 데이터 플로우를 담당! <- 기본적인 틀
+    //TODO LyfeCycleScope를 포함해서 상황에 맞는 Coroutine Scope 사용하도록 공부하기
     override fun observerViewModel() {
         mBinding.btnSearch.setOnClickListener {
             viewModel.searchBook()
@@ -47,9 +49,7 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeA
         with(viewModel) {
             lifecycleScope.launch {
                 getBooksState.collect { state ->
-                    if (!state.isLoading) {
                         bookAdapter.submitList(state.bookList)
-                    }
                 }
             }
         }

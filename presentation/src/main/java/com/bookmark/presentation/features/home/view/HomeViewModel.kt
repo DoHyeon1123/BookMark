@@ -12,6 +12,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -30,19 +32,28 @@ class HomeViewModel @Inject constructor(
         viewModelScope.launch {
             useCases.searchBooks(
                 SearchBooks.Params(query.value ?: "안드로이드")
-            ).onSuccess {
-                it.collect { data ->
+            ).onSuccess { flow ->
+                flow.onStart {
                     _getBooksState.emit(
                         GetBooksState(
+                            isLoading = true
+                        )
+                    )
+                }.collectLatest { data ->
+                    _getBooksState.emit(
+                        GetBooksState(
+                            bookList = data,
                             isLoading = false
                         )
-                    //TODO 인자값 넣고 Loading 상태 해결할 방안 생각하기
                     )
                     Log.d("HomeViewModel_searchBooks()", data.toString())
                 }
             }.onFailure {err ->
                 _getBooksState.emit(
-                    GetBooksState()
+                    GetBooksState(
+                        error = "목록을 불러오는 데에 실패했습니다",
+                        isLoading = false
+                    )
                 )
                 Log.d("HomeViewModel_searchBooks()", err.toString())
 
