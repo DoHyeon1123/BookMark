@@ -33,6 +33,7 @@ object Libraries {
     val hiltCompiler = "com.google.dagger:hilt-android-compiler:${Versions.Google.HILT}"
     val roomCompiler = "androidx.room:room-compiler:${Versions.AndroidX.ROOM}"
 
+
     //Async
     private val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.Jetbrains.COROUTINES}"
 

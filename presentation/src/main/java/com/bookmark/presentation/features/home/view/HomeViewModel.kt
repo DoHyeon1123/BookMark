@@ -20,23 +20,32 @@ import javax.inject.Inject
 class HomeViewModel @Inject constructor(
     private val useCases: BookUseCases
 ) : BaseViewModel() {
-    val comment = MutableLiveData<String>()
+    val query = MutableLiveData<String>()
     val commentList = MutableLiveData<List<Comment>>()
 
     private val _getBooksState = MutableStateFlow(GetBooksState())
     val getBooksState: StateFlow<GetBooksState> = _getBooksState
 
-    fun searchBook(query : String) {
+    fun searchBook() {
         viewModelScope.launch {
             useCases.searchBooks(
-                SearchBooks.Params(query)
+                SearchBooks.Params(query.value ?: "안드로이드")
             ).onSuccess {
                 it.collect { data ->
-                    _getBooksState.value.bookList = data
+                    _getBooksState.emit(
+                        GetBooksState(
+                            isLoading = false
+                        )
+                    //TODO 인자값 넣고 Loading 상태 해결할 방안 생각하기
+                    )
                     Log.d("HomeViewModel_searchBooks()", data.toString())
                 }
             }.onFailure {err ->
+                _getBooksState.emit(
+                    GetBooksState()
+                )
                 Log.d("HomeViewModel_searchBooks()", err.toString())
+
             }
         }
     }
