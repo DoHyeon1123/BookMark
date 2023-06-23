@@ -8,7 +8,9 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ListViewModel @Inject constructor(private val useCases: BookUseCases) : BaseViewModel() {
+class ListViewModel @Inject constructor(
+
+    ) : BaseViewModel() {
     var list = MutableLiveData<List<Book>>()
 
     /*fun getBooksInLibrary(){

@@ -1,8 +1,13 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
-    kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+}
+
+kotlin {
+    jvmToolchain(11)
 }
 
 android {
@@ -26,28 +31,21 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
 }
 
 dependencies {
-
-    implementation(Libraries.app)
-    testImplementation(Libraries.test)
-    androidTestImplementation(Libraries.androidTest)
     implementation(Libraries.di)
     implementation(Libraries.async)
-    kapt(Libraries.kapt)
 
-
+    testImplementation(Libraries.test)
+    androidTestImplementation(Libraries.androidTest)
+    kapt(Libraries.hiltCompiler)
 }
 
-repositories {
-    gradlePluginPortal()
-    google()
-    mavenCentral()
-    maven { url = uri("https://maven.google.com") }
-    maven { url = uri("https://maven.fabric.io/public") }
-    maven { url = uri("https://jitpack.io") }
+kapt {
+    correctErrorTypes = true
 }

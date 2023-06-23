@@ -1,8 +1,13 @@
 plugins {
     id("com.android.application")
     id("kotlin-android")
-    kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+}
+
+kotlin {
+    jvmToolchain(11)
 }
 
 android {
@@ -21,7 +26,10 @@ android {
     buildTypes {
         named("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                    getDefaultProguardFile("proguard-android-optimize.txt"),
+                    "proguard-rules.pro"
+            )
         }
     }
 
@@ -40,6 +48,7 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(project(":di"))
 
     implementation(Libraries.app)
     testImplementation(Libraries.test)
@@ -52,13 +61,4 @@ dependencies {
 
 kapt {
     correctErrorTypes = true
-}
-
-repositories {
-    gradlePluginPortal()
-    google()
-    mavenCentral()
-    maven { url = uri("https://maven.google.com") }
-    maven { url = uri("https://maven.fabric.io/public") }
-    maven { url = uri("https://jitpack.io") }
 }

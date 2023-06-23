@@ -1,8 +1,13 @@
 plugins {
     id("com.android.library")
     id("kotlin-android")
-    kotlin("kapt")
     id("com.google.dagger.hilt.android")
+    id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+}
+
+kotlin {
+    jvmToolchain(11)
 }
 
 android {
@@ -20,8 +25,8 @@ android {
         getByName("release") {
             isMinifyEnabled = false
             proguardFiles(
-                    getDefaultProguardFile("proguard-android-optimize.txt"),
-                    "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
             )
         }
     }
@@ -29,6 +34,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
     kotlinOptions {
         jvmTarget = "11"
     }
@@ -37,27 +43,16 @@ android {
 dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
-    implementation(project(":remote"))
-    implementation(project(":local"))
-    implementation(project(":presentation"))
 
+    implementation(Libraries.di)
+    implementation(Libraries.network)
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)
-    implementation(Libraries.di)
-    kapt(Libraries.kapt)
+    kapt(Libraries.hiltCompiler)
 
 }
 
 kapt {
     correctErrorTypes = true
-}
-
-repositories {
-    gradlePluginPortal()
-    google()
-    mavenCentral()
-    maven { url = uri("https://maven.google.com") }
-    maven { url = uri("https://maven.fabric.io/public") }
-    maven { url = uri("https://jitpack.io") }
 }

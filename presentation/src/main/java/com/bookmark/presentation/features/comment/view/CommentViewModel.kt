@@ -10,11 +10,13 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class CommentViewModel @Inject constructor() : BaseViewModel() {
+class CommentViewModel @Inject constructor(
+
+) : BaseViewModel() {
     val comment = MutableLiveData<String>()
     val commentList = MutableLiveData<List<Comment>>()
 
-    fun deleteComment(bookId : String, id : Int){
+    /*fun deleteComment(bookId : String, id : Int){
         useCases.deleteComment(bookId, id)
         getComment(bookId)
     }
@@ -27,6 +29,6 @@ class CommentViewModel @Inject constructor() : BaseViewModel() {
     fun addComment(bookId: String){
         useCases.addComment(comment.value ?: "댓글이 정상적으로 처리되지 못함", bookId)
         getComment(bookId)
-    }
+    }*/
 
 }

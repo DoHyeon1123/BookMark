@@ -1,12 +1,13 @@
 package com.bookmark.presentation.features.club.adapter
 
+import com.bookmark.domain.model.book.Book
+import com.bookmark.presentation.R
+import com.bookmark.presentation.base.BaseListAdapter
+import com.bookmark.presentation.databinding.ItemSearchResultBinding
 import com.bumptech.glide.Glide
-import com.example.bookmark.R
-import com.example.bookmark.databinding.ItemSearchResultBinding
-import com.example.bookmark.domain.model.Book
-import com.example.bookmark.presentation.base.BaseListAdapter
 
-class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book,ItemSearchResultBinding>(R.layout.item_search_result,
+class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book, ItemSearchResultBinding>(
+    R.layout.item_search_result,
     ClubDiffUtilCallback ){
 
     interface CallBack{
