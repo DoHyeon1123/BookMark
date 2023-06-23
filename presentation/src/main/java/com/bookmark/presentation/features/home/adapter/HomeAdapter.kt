@@ -9,7 +9,7 @@ import com.bookmark.presentation.databinding.ItemSearchResultBinding
 
 
 class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book, ItemSearchResultBinding>(
-    R.layout.item_comment,
+    R.layout.item_search_result,
     BookInfoDiffUtilCallback){
 
     interface CallBack {
