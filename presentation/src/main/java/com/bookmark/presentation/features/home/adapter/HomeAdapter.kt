@@ -6,6 +6,8 @@ import com.bookmark.presentation.R
 import com.bookmark.presentation.base.BaseListAdapter
 import com.bookmark.presentation.databinding.ItemCommentBinding
 import com.bookmark.presentation.databinding.ItemSearchResultBinding
+import com.bumptech.glide.Glide
+import kotlin.coroutines.coroutineContext
 
 
 class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book, ItemSearchResultBinding>(
@@ -21,5 +23,10 @@ class HomeAdapter(private val listener : CallBack) :  BaseListAdapter<Book, Item
         binding.root.setOnClickListener {
             listener.deleteComment(item)
         }
+        Glide.with(binding.ivThumbnail)
+            .load(item.image)
+            .centerCrop()
+            //.error()
+            .into(binding.ivThumbnail)
     }
 }
