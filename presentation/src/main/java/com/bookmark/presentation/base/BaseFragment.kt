@@ -8,12 +8,14 @@ import androidx.annotation.LayoutRes
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.example.bookmark.BR
-import com.example.bookmark.R
+import com.bookmark.presentation.R
+import com.bookmark.presentation.BR
 import java.lang.reflect.ParameterizedType
-import java.util.*
+import java.util.Locale
+import java.util.Objects
 
-abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment(){
+abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment() {
+
     protected lateinit var mBinding: VB
     private lateinit var mViewModel: VM
     protected abstract val viewModel: VM
@@ -21,6 +23,7 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
     protected var savedInstanceState: Bundle? = null
 
     protected abstract fun observerViewModel()
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,8 +38,33 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
         return mBinding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        this.savedInstanceState = savedInstanceState
+        setUp()
+        observerViewModel()
+    }
+
+    private fun setUp() {
+        mViewModel = if (::mViewModel.isInitialized) mViewModel else viewModel
+        mBinding.setVariable(BR.vm, mViewModel)
+        mBinding.lifecycleOwner = this
+        mBinding.executePendingBindings()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        if (::mBinding.isInitialized) mBinding.unbind()
+    }
 
 
+
+
+    /**
+     * Generic Type (Binding) class 를 가져와서 layout 파일명으로 변환 후 자동으로 Layout Resource 를 가져옴
+     *
+     * @return layout resource
+     */
     @LayoutRes
     private fun layoutRes(): Int {
         val split =
@@ -66,18 +94,29 @@ abstract class BaseFragment<VB : ViewDataBinding, VM : BaseViewModel> : Fragment
 
         return 0
     }
-    private fun setUp() {
-        mViewModel = if (::mViewModel.isInitialized) mViewModel else viewModel
-        mBinding.setVariable(BR.vm, mViewModel)
-        mBinding.lifecycleOwner = this
-        mBinding.executePendingBindings()
+
+    protected fun bindingViewEvent(action: (event: Any) -> Unit) {
+        /*viewModel.viewEvent.observe(viewLifecycleOwner) {
+            it.getContentIfNotHandled()?.let { event ->
+                action.invoke(event)
+            }
+        }
+
+        viewModel.tokenErrorEvent.observe(viewLifecycleOwner) {
+            if (it == Utils.TOKEN_EXCEPTION) {
+                shortToast("세션이 만료되었습니다.")
+                SharedPreferenceManager.logout(requireContext())
+                startActivityWithFinishAll(StartActivity::class.java)
+            }
+        }*/
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        this.savedInstanceState = savedInstanceState
-        setUp()
-        observerViewModel()
+    protected open fun onErrorEvent(e: Throwable) {
+        /*if (e is TokenException) {
+            SharedPreferenceManager.logout(this.context!!.applicationContext)
+            startActivityWithFinishAll(LoginActivity::class.java)
+            shortToast(e.message)
+            return
+        }*/
     }
-
 }

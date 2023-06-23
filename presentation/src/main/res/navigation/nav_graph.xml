@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.bookmark.presentation.features.home.HomeFragment"
+        android:name="com.bookmark.presentation.features.home.view.HomeFragment"
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.example.bookmark.presentation.features.library.ListFragment"
+        android:name="com.bookmark.presentation.features.profile.view.ListFragment"
         android:label="ListFragment"
         tools:layout="@layout/fragment_list">
         <action
@@ -38,7 +38,7 @@
     </fragment>
     <fragment
         android:id="@+id/timeFragment"
-        android:name="com.example.bookmark.presentation.features.timer.TimeFragment"
+        android:name="com.bookmark.presentation.features.club.view.ClubFragment"
         android:label="TimeFragment"
         tools:layout="@layout/fragment_time">
         <action
@@ -47,7 +47,7 @@
     </fragment>
     <fragment
         android:id="@+id/commentFragment"
-        android:name="com.example.bookmark.presentation.features.comment.CommentFragment"
+        android:name="com.bookmark.presentation.features.comment.view.CommentFragment"
         android:label="CommentFragment"
         tools:layout="@layout/fragment_comment">
         <argument

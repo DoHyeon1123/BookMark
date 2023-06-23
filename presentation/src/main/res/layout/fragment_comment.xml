@@ -5,7 +5,7 @@
     <data>
         <variable
             name="vm"
-            type="com.example.bookmark.presentation.features.comment.CommentViewModel" />
+            type="com.bookmark.presentation.features.comment.view.CommentViewModel" />
     </data>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

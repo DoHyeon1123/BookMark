@@ -1,8 +1,8 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal()
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
 }
 dependencyResolutionManagement {
@@ -13,5 +13,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "BookMark"
-include(":presentation", ":domain",":di",":local",":remote")
+include(":presentation")
+include(":di")
+include(":domain")
 include(":data")
