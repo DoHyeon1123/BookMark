@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.presentation.R
 import com.bookmark.presentation.databinding.FragmentCommentBinding
@@ -58,13 +59,13 @@ class CommentFragment() : Fragment(), BookAdapter.CallBack {
                 viewLifecycleOwner,
                 Observer<List<Comment>> {
                     Log.e("LibraryFragment", it.toString())
-                    adapter.submitList(it)
+                    //adapter.submitList(it)
                 }
             )
         }
     }
 
-    override fun deleteComment(info: Comment) {
-        //viewModel.deleteComment(info.bookId, info.id)
+    override fun deleteComment(info: Book) {
+        TODO("Not yet implemented")
     }
 }

@@ -10,14 +10,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.book.Book
-import com.bookmark.presentation.databinding.FragmentListBinding
+import com.bookmark.presentation.databinding.FragmentProfileBinding
 import com.bookmark.presentation.adapter.LibraryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ProfileFragment : Fragment(), LibraryAdapter.CallBack {
     private val viewModel : ProfileViewModel by viewModels()
-    private lateinit var binding : FragmentListBinding
+    private lateinit var binding : FragmentProfileBinding
     private val adapter = LibraryAdapter(this)
     override fun onCreateView(
         inflater: LayoutInflater,
