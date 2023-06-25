@@ -15,8 +15,8 @@ import com.bookmark.presentation.adapter.LibraryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ListFragment : Fragment(), LibraryAdapter.CallBack {
-    private val viewModel : ListViewModel by viewModels()
+class ProfileFragment : Fragment(), LibraryAdapter.CallBack {
+    private val viewModel : ProfileViewModel by viewModels()
     private lateinit var binding : FragmentListBinding
     private val adapter = LibraryAdapter(this)
     override fun onCreateView(

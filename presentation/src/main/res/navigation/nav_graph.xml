@@ -11,25 +11,25 @@
         android:label="HomeFragment"
         tools:layout="@layout/fragment_home">
         <action
-            android:id="@+id/action_homeFragment_to_listFragment"
+            android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/listFragment" />
         <action
             android:id="@+id/action_homeFragment_to_timeFragment"
             app:destination="@id/timeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/listFragment"
-        android:name="com.bookmark.presentation.features.profile.ListFragment"
-        android:label="ListFragment"
-        tools:layout="@layout/fragment_list">
+        android:id="@+id/profileFragment"
+        android:name="com.bookmark.presentation.features.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
         <action
-            android:id="@+id/action_listFragment_to_homeFragment"
+            android:id="@+id/action_profileFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
         <action
-            android:id="@+id/action_listFragment_to_timeFragment"
+            android:id="@+id/action_profileFragment_to_timeFragment"
             app:destination="@id/timeFragment" />
         <action
-            android:id="@+id/action_listFragment_to_commentFragment"
+            android:id="@+id/action_profileFragment_to_commentFragment"
             app:destination="@id/commentFragment" />
         <argument
             android:name="bookId"
@@ -42,8 +42,8 @@
         android:label="TimeFragment"
         tools:layout="@layout/fragment_time">
         <action
-            android:id="@+id/action_timeFragment_to_listFragment"
-            app:destination="@id/listFragment" />
+            android:id="@+id/action_timeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/commentFragment"

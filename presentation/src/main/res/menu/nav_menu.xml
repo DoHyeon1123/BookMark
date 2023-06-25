@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/timeFragment" android:title="@string/title_check" android:icon="@drawable/ic_time"/>
+    <item android:id="@+id/timeFragment" android:title="@string/title_time" android:icon="@drawable/ic_time"/>
     <item android:id="@+id/homeFragment" android:title="@string/title_home" android:icon="@drawable/ic_home"/>
-    <item android:id="@+id/listFragment" android:title="@string/title_library" android:icon="@drawable/ic_book_library"/>
+    <item android:id="@+id/profileFragment" android:title="@string/title_profile" android:icon="@drawable/ic_profile"/>
 </menu>
