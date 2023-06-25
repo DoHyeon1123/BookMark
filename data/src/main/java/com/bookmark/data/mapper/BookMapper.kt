@@ -5,6 +5,7 @@ import com.bookmark.data.db.entity.CommentEntity
 import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.book.Document
 import com.bookmark.domain.model.profile.Comment
+import java.time.LocalDate
 
 class BookMapper {
     fun mapDocumentToBook(list : List<Document>) : List<Book>{
@@ -12,33 +13,23 @@ class BookMapper {
         list.map {
             newList.add(
                 Book(
-                title = it.title,
-                image = it.thumbnail,
-                author = it.authors.toString(),
-                content = it.contents,
-                url = it.url,
-                id = it.isbn
-            )
+                    title = it.title,
+                    image = it.thumbnail,
+                    author = it.authors.toString(),
+                    content = it.contents,
+                    url = it.url,
+                    id = it.isbn,
+                    reading_date = LocalDate.now().toString()
+                )
             )
         }
         return newList
     }
 
     fun mapEntityToBook(list : List<BookEntity>) : List<Book>{
-        val newList : MutableList<Book> = arrayListOf()
-        list.map {
-            newList.add(
-                Book(
-                title = it.title,
-                image = it.image,
-                author = it.authors,
-                content = it.contents,
-                url = it.url,
-                id = it.id
-            )
-            )
+        return list.map {
+            mapEntityToBook(it)
         }
-        return newList
     }
 
     fun mapEntityToComment(list : List<CommentEntity>) : List<Comment>{
@@ -63,7 +54,8 @@ class BookMapper {
             author = entity.authors,
             content = entity.contents,
             url = entity.url,
-            id = entity.id
+            id = entity.id,
+            reading_date = entity.reading_date
         )
     }
 }

@@ -7,7 +7,7 @@ import com.bookmark.domain.model.book.BookType
 import javax.inject.Inject
 
 class BookCache @Inject constructor(application: Application) : BaseCache(application){
-    fun insertBookInfo(
+    suspend fun insertBookInLibrary(
         id : String,
         title : String,
         image : String,
@@ -20,11 +20,12 @@ class BookCache @Inject constructor(application: Application) : BaseCache(applic
         return database.bookInfoDao().insertBookInfo(id, title, image, url, contents, authors, type,reading_date)
     }
 
-    fun selectAllBooks():List<BookEntity>{
-        return database.bookInfoDao().selectAllBooks()
+    suspend fun selectBook(type : BookType):List<BookEntity>{
+        return database.bookInfoDao().selectBookByType(type)
     }
-    fun selectBook(id : String): BookEntity {
-        return database.bookInfoDao().selectBook(id)
+
+    suspend fun selectBook(id : String) : List<BookEntity>{
+        return database.bookInfoDao().selectBookById(id)
     }
 
     fun deleteBook(id : String){

@@ -1,7 +1,5 @@
 package com.bookmark.domain.usecase.main.books
 
-import android.util.Log
-import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.repository.BookRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow

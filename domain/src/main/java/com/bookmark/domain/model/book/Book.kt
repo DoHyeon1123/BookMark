@@ -6,5 +6,6 @@ data class Book(
     var image : String,
     var author : String,
     var content : String,
-    var url : String
+    var url : String,
+    val reading_date : String
 )

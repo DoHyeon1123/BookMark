@@ -10,7 +10,7 @@ import com.bookmark.domain.model.book.BookType
 interface BookDao {
         @Query("INSERT INTO Library(id, authors, title, image, contents, url, type, reading_date) " +
                 "VALUES(:id,:authors, :title, :image, :contents, :url, :type, :reading_date)")
-        fun insertBookInfo(
+        suspend fun insertBookInfo(
             id : String,
             title : String,
             image : String,
@@ -21,11 +21,11 @@ interface BookDao {
             reading_date : String
             )
 
-        @Query("SELECT * FROM Library")
-        fun selectAllBooks():List<BookEntity>
+        @Query("SELECT * FROM Library WHERE type = :type")
+        suspend fun selectBookByType(type : BookType):List<BookEntity>
 
         @Query("SELECT * FROM Library Where id = :id")
-        fun selectBook(id : String): BookEntity
+        suspend fun selectBookById(id : String): List<BookEntity>
 
         @Query("DELETE FROM Library Where id = :id")
         fun deleteBook(id : String)

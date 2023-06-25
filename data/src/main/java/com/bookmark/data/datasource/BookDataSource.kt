@@ -4,6 +4,7 @@ import com.bookmark.data.db.cache.BookCache
 import com.bookmark.data.mapper.BookMapper
 import com.bookmark.data.network.remote.BookRemote
 import com.bookmark.domain.model.book.Book
+import com.bookmark.domain.model.book.BookType
 import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.domain.usecase.profile.library.InsertBookInLibrary
 import javax.inject.Inject
@@ -20,7 +21,7 @@ class BookDataSource @Inject constructor(
     }
 
     suspend fun insertBookInLibrary(params : InsertBookInLibrary.Params) {
-        cache.insertBookInfo(
+        cache.insertBookInLibrary(
             id = params.id,
             title = params.title,
             image = params.image,
@@ -30,5 +31,13 @@ class BookDataSource @Inject constructor(
             type = params.type,
             reading_date = params.reading_date
         )
+    }
+
+    suspend fun selectBook(type : BookType) : List<Book> {
+        return mapper.mapEntityToBook(cache.selectBook(type))
+    }
+
+    suspend fun selectBook(id : String) : List<Book> {
+        return mapper.mapEntityToBook(cache.selectBook(id))
     }
 }

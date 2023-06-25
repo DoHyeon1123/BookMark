@@ -3,6 +3,7 @@ package com.bookmark.data.repository
 import com.bookmark.data.datasource.BookDataSource
 import com.bookmark.data.network.remote.BookRemote
 import com.bookmark.domain.model.book.Book
+import com.bookmark.domain.model.book.BookType
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.repository.BookRepository
 import com.bookmark.domain.usecase.main.books.SearchBooks
@@ -18,8 +19,12 @@ class BookRepositoryImpl @Inject constructor(
        dataSource.insertBookInLibrary(params)
     }
 
-    override suspend fun selectBookInLibrary(): List<Book> {
-        TODO("Not yet implemented")
+    override suspend fun selectBookInLibrary(id: String): List<Book> {
+        return dataSource.selectBook(id)
+    }
+
+    override suspend fun selectBookInLibrary(type: BookType): List<Book> {
+        return dataSource.selectBook(type)
     }
 
     override suspend fun updateBookInLibrary(info: Book) {

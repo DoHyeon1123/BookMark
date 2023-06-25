@@ -1,6 +1,7 @@
 package com.bookmark.domain.repository
 
 import com.bookmark.domain.model.book.Book
+import com.bookmark.domain.model.book.BookType
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.domain.usecase.profile.library.InsertBookInLibrary
@@ -12,7 +13,9 @@ interface BookRepository {
 
     //Room
     suspend fun insertBookInLibrary(params : InsertBookInLibrary.Params)
-    suspend fun selectBookInLibrary():List<Book>
+    suspend fun selectBookInLibrary(id: String):List<Book>
+
+    suspend fun selectBookInLibrary(type : BookType):List<Book>
     suspend fun updateBookInLibrary(info : Book)
     suspend fun deleteBookInLibrary(id: String)
 

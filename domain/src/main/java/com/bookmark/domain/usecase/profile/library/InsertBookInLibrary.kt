@@ -16,7 +16,7 @@ class InsertBookInLibrary @Inject constructor(private val repository : BookRepos
         val reading_date : String,
         val id : String
     )
-    fun invoke(params : Params) {
+    suspend fun invoke(params : Params) {
         repository.insertBookInLibrary(params)
     }
 }

@@ -6,7 +6,6 @@ import com.bookmark.domain.usecase.club.member.AddMember
 import com.bookmark.domain.usecase.club.member.DeleteMember
 import com.bookmark.domain.usecase.club.member.GetMembers
 import com.bookmark.domain.usecase.club.member.UpdateMember
-import com.bookmark.domain.usecase.main.books.GetBooks
 import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.domain.usecase.profile.GetProfileInfo
 import com.bookmark.domain.usecase.profile.UpdateProfileInfo
@@ -46,7 +45,6 @@ data class BookUseCases(
 
     // Main
     // 책 정보
-    val getBooks: GetBooks,
     val searchBooks: SearchBooks,
 
     // Profile
