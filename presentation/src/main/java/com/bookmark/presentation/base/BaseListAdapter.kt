@@ -8,7 +8,6 @@ import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bookmark.presentation.features.profile.adapter.LibraryDiffUtilCallback
 
 abstract class BaseListAdapter<T : Any, B : ViewDataBinding>(
     @LayoutRes private val itemLayoutRes: Int,

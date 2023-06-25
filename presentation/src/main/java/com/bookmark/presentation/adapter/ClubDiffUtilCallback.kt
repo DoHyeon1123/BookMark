@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.club.adapter
+package com.bookmark.presentation.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bookmark.domain.model.book.Book

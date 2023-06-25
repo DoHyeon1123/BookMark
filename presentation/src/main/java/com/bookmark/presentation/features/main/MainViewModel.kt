@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.main.view
+package com.bookmark.presentation.features.main
 import androidx.lifecycle.ViewModel
 import com.bookmark.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

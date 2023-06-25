@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.club.view
+package com.bookmark.presentation.features.club
 
 import android.os.Bundle
 import android.util.Log
@@ -8,13 +8,10 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.book.Book
 import com.bookmark.presentation.R
-import com.bookmark.presentation.databinding.FragmentHomeBinding
 import com.bookmark.presentation.databinding.FragmentTimeBinding
-import com.bookmark.presentation.features.club.adapter.ClubAdapter
+import com.bookmark.presentation.adapter.ClubAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

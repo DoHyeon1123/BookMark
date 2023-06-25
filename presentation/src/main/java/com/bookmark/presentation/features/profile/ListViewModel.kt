@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.profile.view
+package com.bookmark.presentation.features.profile
 
 import androidx.lifecycle.MutableLiveData
 import com.bookmark.domain.model.book.Book

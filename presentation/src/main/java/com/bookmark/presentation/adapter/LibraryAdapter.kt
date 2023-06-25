@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.profile.adapter
+package com.bookmark.presentation.adapter
 
 import com.bookmark.domain.model.book.Book
 import com.bookmark.presentation.R

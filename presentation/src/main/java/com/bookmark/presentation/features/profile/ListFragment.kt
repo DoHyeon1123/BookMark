@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.profile.view
+package com.bookmark.presentation.features.profile
 
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.book.Book
 import com.bookmark.presentation.databinding.FragmentListBinding
-import com.bookmark.presentation.features.profile.adapter.LibraryAdapter
+import com.bookmark.presentation.adapter.LibraryAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

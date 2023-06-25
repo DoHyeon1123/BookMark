@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.club.view
+package com.bookmark.presentation.features.club
 
 import android.telecom.Call
 import android.util.Log

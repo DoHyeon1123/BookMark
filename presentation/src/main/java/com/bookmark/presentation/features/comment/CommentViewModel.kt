@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.comment.view
+package com.bookmark.presentation.features.comment
 
 import android.os.Parcel
 import android.os.Parcelable

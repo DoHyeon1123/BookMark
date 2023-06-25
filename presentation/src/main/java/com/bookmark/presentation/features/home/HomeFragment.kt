@@ -1,28 +1,20 @@
-package com.bookmark.presentation.features.home.view
+package com.bookmark.presentation.features.home
 
 import android.os.Bundle
-import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.book.Book
-import com.bookmark.presentation.R
 import com.bookmark.presentation.base.BaseFragment
 import com.bookmark.presentation.databinding.FragmentHomeBinding
-import com.bookmark.presentation.features.home.adapter.HomeAdapter
-import com.bookmark.presentation.features.home.state.GetBooksState
+import com.bookmark.presentation.adapter.BookAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), HomeAdapter.CallBack {
-    private val bookAdapter = HomeAdapter(this)
+class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), BookAdapter.CallBack {
+    private val bookAdapter = BookAdapter(this)
     override val viewModel: HomeViewModel by viewModels()
     //private val args: CommentFragmentArgs by navArgs()
 

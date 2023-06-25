@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.home.view
+package com.bookmark.presentation.features.home
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,6 @@ import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.usecase.BookUseCases
 import com.bookmark.domain.usecase.main.books.SearchBooks
 import com.bookmark.presentation.base.BaseViewModel
-import com.bookmark.presentation.features.home.state.GetBooksState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

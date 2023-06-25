@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.home.state
+package com.bookmark.presentation.features.home
 
 import com.bookmark.domain.model.book.Book
 

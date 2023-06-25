@@ -1,9 +1,9 @@
-package com.bookmark.presentation.features.comment.adapter
+package com.bookmark.presentation.adapter
 
 import androidx.recyclerview.widget.DiffUtil
 import com.bookmark.domain.model.profile.Comment
 
-object ClubDiffUtilCallback : DiffUtil.ItemCallback<Comment>() {
+object CommentDiffUtilCallback : DiffUtil.ItemCallback<Comment>() {
     override fun areItemsTheSame(oldItem: Comment, newItem: Comment): Boolean = oldItem == newItem
     override fun areContentsTheSame(oldItem: Comment, newItem: Comment): Boolean = oldItem == newItem
 }

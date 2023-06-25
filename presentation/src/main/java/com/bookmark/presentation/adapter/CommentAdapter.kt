@@ -1,14 +1,13 @@
-package com.bookmark.presentation.features.comment.adapter
+package com.bookmark.presentation.adapter
 
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.presentation.R
 import com.bookmark.presentation.base.BaseListAdapter
 import com.bookmark.presentation.databinding.ItemCommentBinding
-import com.bookmark.presentation.features.home.adapter.BookInfoDiffUtilCallback
 
 class CommentAdapter(private val listener : CallBack) :  BaseListAdapter<Comment, ItemCommentBinding>(
     R.layout.item_comment,
-    ClubDiffUtilCallback ){
+    CommentDiffUtilCallback ){
 
     interface CallBack{
         fun deleteComment(info : Comment)

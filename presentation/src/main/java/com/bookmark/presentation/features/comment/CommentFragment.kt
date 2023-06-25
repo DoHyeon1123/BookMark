@@ -1,4 +1,4 @@
-package com.bookmark.presentation.features.comment.view
+package com.bookmark.presentation.features.comment
 
 import android.os.Bundle
 import android.util.Log
@@ -13,20 +13,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.presentation.R
 import com.bookmark.presentation.databinding.FragmentCommentBinding
-import com.bookmark.presentation.features.comment.adapter.CommentAdapter
-import com.bookmark.presentation.features.home.view.HomeViewModel
+import com.bookmark.presentation.adapter.BookAdapter
+import com.bookmark.presentation.features.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 
 
-class CommentFragment() : Fragment(), CommentAdapter.CallBack {
+class CommentFragment() : Fragment(), BookAdapter.CallBack {
     private val viewModel : HomeViewModel by viewModels()
     private lateinit var binding : FragmentCommentBinding
-    private val adapter = CommentAdapter(this)
+    private val adapter = BookAdapter(this)
 
 
     override fun onCreateView(
+
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
