@@ -9,7 +9,7 @@ import com.bookmark.data.db.entity.BookEntity
 import com.bookmark.data.db.entity.CommentEntity
 
 class DataBases {
-    @Database(entities = [BookEntity::class, CommentEntity::class], version = 2,exportSchema = false)//version은 구조 변경 시 구버전과 구분할 수 있도록 해준다.
+    @Database(entities = [BookEntity::class, CommentEntity::class], version = 3,exportSchema = false)//version은 구조 변경 시 구버전과 구분할 수 있도록 해준다.
 
     abstract class BookMarkDatabase: RoomDatabase() {
         //RoomDatabase()를 상속받는 DataBase 추상 클래스를 작성한다.
