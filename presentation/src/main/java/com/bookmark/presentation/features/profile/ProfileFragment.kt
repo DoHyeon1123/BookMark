@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -12,30 +13,21 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.book.Book
 import com.bookmark.presentation.databinding.FragmentProfileBinding
 import com.bookmark.presentation.adapter.LibraryAdapter
+import com.bookmark.presentation.base.BaseFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProfileFragment : Fragment(), LibraryAdapter.CallBack {
-    private val viewModel : ProfileViewModel by viewModels()
-    private lateinit var binding : FragmentProfileBinding
+class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileViewModel>(), LibraryAdapter.CallBack {
+    override val viewModel : ProfileViewModel by viewModels()
     private val adapter = LibraryAdapter(this)
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        //viewModel.getBooksInLibrary()
-        //binding.rvBookList.adapter = adapter
-        binding.rvBookList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL, false)
-        return binding.root
-    }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        observerViewModel()
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mBinding.rvBookList.adapter = adapter
+        mBinding.rvBookList.layoutManager = LinearLayoutManager(context,LinearLayoutManager.VERTICAL,false)
     }
-
-    private fun observerViewModel() {
+    override fun observerViewModel() {
+        mBinding.rvBookList.layoutManager = LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL, false)
         with(viewModel){
             list.observe(
                 viewLifecycleOwner,
