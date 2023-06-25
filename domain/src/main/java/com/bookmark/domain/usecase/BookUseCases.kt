@@ -1,6 +1,5 @@
 package com.bookmark.domain.usecase
 
-import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.usecase.club.*
 import com.bookmark.domain.usecase.club.feed.*
 import com.bookmark.domain.usecase.club.member.AddMember
@@ -15,14 +14,13 @@ import com.bookmark.domain.usecase.profile.goal.AddReadingGoal
 import com.bookmark.domain.usecase.profile.goal.DeleteReadingGoal
 import com.bookmark.domain.usecase.profile.goal.GetReadingGoals
 import com.bookmark.domain.usecase.profile.goal.UpdateReadingGoal
-import com.bookmark.domain.usecase.profile.library.AddBookInLibrary
+import com.bookmark.domain.usecase.profile.library.InsertBookInLibrary
 import com.bookmark.domain.usecase.profile.library.DeleteBookInLibrary
-import com.bookmark.domain.usecase.profile.library.GetLibraryInfo
+import com.bookmark.domain.usecase.profile.library.SelectBookInLibrary
 import com.bookmark.domain.usecase.profile.library.comment.AddComment
 import com.bookmark.domain.usecase.profile.library.comment.DeleteComment
 import com.bookmark.domain.usecase.profile.library.comment.GetComments
 import com.bookmark.domain.usecase.profile.library.comment.UpdateComment
-import kotlinx.coroutines.flow.Flow
 
 data class BookUseCases(
 
@@ -63,8 +61,8 @@ data class BookUseCases(
     val deleteReadingGoal: DeleteReadingGoal,
 
     // 나의 서재 기능 관련
-    val getBookInLibrary: GetLibraryInfo,
-    val addBookInLibrary: AddBookInLibrary,
+    val getBookInLibrary: SelectBookInLibrary,
+    val addBookInLibrary: InsertBookInLibrary,
     val deleteBookInLibrary: DeleteBookInLibrary,
 
     // 코멘트 기능 관련

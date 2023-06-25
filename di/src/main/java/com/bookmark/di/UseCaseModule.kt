@@ -16,14 +16,13 @@ import com.bookmark.domain.usecase.profile.goal.AddReadingGoal
 import com.bookmark.domain.usecase.profile.goal.DeleteReadingGoal
 import com.bookmark.domain.usecase.profile.goal.GetReadingGoals
 import com.bookmark.domain.usecase.profile.goal.UpdateReadingGoal
-import com.bookmark.domain.usecase.profile.library.AddBookInLibrary
+import com.bookmark.domain.usecase.profile.library.InsertBookInLibrary
 import com.bookmark.domain.usecase.profile.library.DeleteBookInLibrary
-import com.bookmark.domain.usecase.profile.library.GetLibraryInfo
+import com.bookmark.domain.usecase.profile.library.SelectBookInLibrary
 import com.bookmark.domain.usecase.profile.library.comment.AddComment
 import com.bookmark.domain.usecase.profile.library.comment.DeleteComment
 import com.bookmark.domain.usecase.profile.library.comment.GetComments
 import com.bookmark.domain.usecase.profile.library.comment.UpdateComment
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -74,9 +73,9 @@ class UseCaseModule {
             updateComment = UpdateComment(repository),
 
             // 서재
-            addBookInLibrary = AddBookInLibrary(repository),
+            addBookInLibrary = InsertBookInLibrary(repository),
             deleteBookInLibrary = DeleteBookInLibrary(repository),
-            getBookInLibrary = GetLibraryInfo(repository),
+            getBookInLibrary = SelectBookInLibrary(repository),
 
             // 프로필
             getProfileInfo = GetProfileInfo(repository),

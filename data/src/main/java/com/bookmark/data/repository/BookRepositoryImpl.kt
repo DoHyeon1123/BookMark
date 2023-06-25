@@ -6,6 +6,7 @@ import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.repository.BookRepository
 import com.bookmark.domain.usecase.main.books.SearchBooks
+import com.bookmark.domain.usecase.profile.library.InsertBookInLibrary
 import javax.inject.Inject
 
 class BookRepositoryImpl @Inject constructor(
@@ -13,39 +14,35 @@ class BookRepositoryImpl @Inject constructor(
 ) : BookRepository  {
     override suspend fun searchBooks(params: SearchBooks.Params): List<Book> = dataSource.searchBooks(params)
 
-    override fun addBookInLibrary(info: Book) {
+    override suspend fun insertBookInLibrary(params: InsertBookInLibrary.Params) {
+       dataSource.insertBookInLibrary(params)
+    }
+
+    override suspend fun selectBookInLibrary(): List<Book> {
         TODO("Not yet implemented")
     }
 
-    override fun getBooksInLibrary(): List<Book> {
+    override suspend fun updateBookInLibrary(info: Book) {
         TODO("Not yet implemented")
     }
 
-    override fun getBookInLibrary(id: String): Book {
+    override suspend fun deleteBookInLibrary(id: String) {
         TODO("Not yet implemented")
     }
 
-    override fun updateBookInLibrary(info: Book) {
+    override suspend fun getComment(bookId: String): List<Comment> {
         TODO("Not yet implemented")
     }
 
-    override fun deleteBookInLibrary(id: String) {
+    override suspend fun addComment(comment: String, bookId: String) {
         TODO("Not yet implemented")
     }
 
-    override fun getComment(bookId: String): List<Comment> {
+    override suspend fun updateComment(comment: String, bookId: String, id: Int) {
         TODO("Not yet implemented")
     }
 
-    override fun addComment(comment: String, bookId: String) {
-        TODO("Not yet implemented")
-    }
-
-    override fun updateComment(comment: String, bookId: String, id: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun deleteComment(bookId: String, id: Int) {
+    override suspend fun deleteComment(bookId: String, id: Int) {
         TODO("Not yet implemented")
     }
 }

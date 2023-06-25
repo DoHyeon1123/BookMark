@@ -1,4 +1,4 @@
-package com.bookmark.data.db.entity
+package com.bookmark.domain.model.book
 
 enum class BookType {
     NEW, READING, SAVED

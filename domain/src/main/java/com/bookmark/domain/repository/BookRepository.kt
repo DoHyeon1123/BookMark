@@ -3,6 +3,7 @@ package com.bookmark.domain.repository
 import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.profile.Comment
 import com.bookmark.domain.usecase.main.books.SearchBooks
+import com.bookmark.domain.usecase.profile.library.InsertBookInLibrary
 
 
 interface BookRepository {
@@ -10,16 +11,13 @@ interface BookRepository {
     suspend fun searchBooks(params : SearchBooks.Params): List<Book>
 
     //Room
-    fun addBookInLibrary(info : Book)
+    suspend fun insertBookInLibrary(params : InsertBookInLibrary.Params)
+    suspend fun selectBookInLibrary():List<Book>
+    suspend fun updateBookInLibrary(info : Book)
+    suspend fun deleteBookInLibrary(id: String)
 
-    fun getBooksInLibrary():List<Book>
-
-    fun getBookInLibrary(id : String): Book
-    fun updateBookInLibrary(info : Book)
-    fun deleteBookInLibrary(id: String)
-
-    fun getComment(bookId : String) : List<Comment>
-    fun addComment(comment : String, bookId: String)
-    fun updateComment(comment: String, bookId: String, id: Int)
-    fun deleteComment(bookId : String, id : Int)
+    suspend fun getComment(bookId : String) : List<Comment>
+    suspend fun addComment(comment : String, bookId: String)
+    suspend fun updateComment(comment: String, bookId: String, id: Int)
+    suspend fun deleteComment(bookId : String, id : Int)
 }

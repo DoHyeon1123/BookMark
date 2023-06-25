@@ -1,6 +1,7 @@
 package com.bookmark.di
 
 import com.bookmark.data.datasource.BookDataSource
+import com.bookmark.data.db.cache.BookCache
 import com.bookmark.data.network.remote.BookRemote
 import dagger.Module
 import dagger.Provides
@@ -13,7 +14,7 @@ import javax.inject.Singleton
 class DataSourceModule {
     @Singleton
     @Provides
-    fun provideBookDataSource(remote : BookRemote) : BookDataSource {
-        return BookDataSource(remote)
+    fun provideBookDataSource(remote : BookRemote, cache :BookCache) : BookDataSource {
+        return BookDataSource(remote, cache)
     }
 }

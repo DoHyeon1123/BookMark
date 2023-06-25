@@ -3,6 +3,7 @@ package com.bookmark.data.db.cache
 import android.app.Application
 import com.bookmark.data.db.entity.BookEntity
 import com.bookmark.data.db.entity.CommentEntity
+import com.bookmark.domain.model.book.BookType
 import javax.inject.Inject
 
 class BookCache @Inject constructor(application: Application) : BaseCache(application){
@@ -12,8 +13,11 @@ class BookCache @Inject constructor(application: Application) : BaseCache(applic
         image : String,
         url : String,
         contents : String,
-        authors : String ) {
-        return database.bookInfoDao().insertBookInfo(id, title, image, url, contents, authors)
+        authors : String,
+        type : BookType,
+        reading_date : String
+    ) {
+        return database.bookInfoDao().insertBookInfo(id, title, image, url, contents, authors, type,reading_date)
     }
 
     fun selectAllBooks():List<BookEntity>{

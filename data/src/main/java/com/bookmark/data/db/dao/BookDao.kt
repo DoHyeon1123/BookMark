@@ -4,17 +4,22 @@ import androidx.room.Dao
 import androidx.room.Query
 import com.bookmark.data.db.entity.BookEntity
 import com.bookmark.data.db.entity.CommentEntity
+import com.bookmark.domain.model.book.BookType
 
 @Dao
 interface BookDao {
-        @Query("INSERT INTO Library(id, authors, title, image, contents, url) VALUES(:id,:authors, :title, :image, :contents, :url)")
+        @Query("INSERT INTO Library(id, authors, title, image, contents, url, type, reading_date) " +
+                "VALUES(:id,:authors, :title, :image, :contents, :url, :type, :reading_date)")
         fun insertBookInfo(
             id : String,
             title : String,
             image : String,
             url : String,
             contents : String,
-            authors : String )
+            authors : String,
+            type : BookType,
+            reading_date : String
+            )
 
         @Query("SELECT * FROM Library")
         fun selectAllBooks():List<BookEntity>
@@ -36,6 +41,8 @@ interface BookDao {
 
     @Query("UPDATE Comments SET comment = :comment, dateTime = :dateTime WHERE bookId = :bookId & id = :id")
     fun updateComment(bookId : String, comment: String, dateTime : String, id : Int)
+
+    //TODO User 회원가입 정보를 저장해서 꺼내 써야함
 
 
 
