@@ -7,7 +7,7 @@ import com.bookmark.presentation.databinding.ItemSearchResultBinding
 import com.bumptech.glide.Glide
 
 
-class BookAdapter(private val listener : CallBack) :  BaseListAdapter<Book, ItemSearchResultBinding>(
+class BookAdapter() :  BaseListAdapter<Book, ItemSearchResultBinding>(
     R.layout.item_search_result,
     BookInfoDiffUtilCallback
 ){
@@ -18,9 +18,6 @@ class BookAdapter(private val listener : CallBack) :  BaseListAdapter<Book, Item
 
     override fun action(item: Book, binding: ItemSearchResultBinding) {
         binding.info = item
-        binding.root.setOnClickListener {
-            listener.deleteComment(item)
-        }
         Glide.with(binding.ivThumbnail)
             .load(item.image)
             .centerCrop()

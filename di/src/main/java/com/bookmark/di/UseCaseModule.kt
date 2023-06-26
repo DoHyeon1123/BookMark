@@ -72,9 +72,9 @@ class UseCaseModule {
             updateComment = UpdateComment(repository),
 
             // 서재
-            addBookInLibrary = InsertBookInLibrary(repository),
+            insertBookInLibrary = InsertBookInLibrary(repository),
             deleteBookInLibrary = DeleteBookInLibrary(repository),
-            getBookInLibrary = SelectBookInLibrary(repository),
+            selectBookInLibrary = SelectBookInLibrary(repository),
 
             // 프로필
             getProfileInfo = GetProfileInfo(repository),

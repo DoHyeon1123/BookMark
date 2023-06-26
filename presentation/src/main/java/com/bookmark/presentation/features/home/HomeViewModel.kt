@@ -21,7 +21,6 @@ class HomeViewModel @Inject constructor(
     private val useCases: BookUseCases
 ) : BaseViewModel() {
     val query = MutableLiveData<String>()
-    val commentList = MutableLiveData<List<Comment>>()
 
     private val _getBooksState = MutableStateFlow(GetBooksState())
     val getBooksState: StateFlow<GetBooksState> = _getBooksState

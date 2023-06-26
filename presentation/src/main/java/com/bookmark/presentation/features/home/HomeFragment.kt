@@ -13,8 +13,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), BookAdapter.CallBack {
-    private val bookAdapter = BookAdapter(this)
+class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>() {
+    private val bookAdapter = BookAdapter()
     override val viewModel: HomeViewModel by viewModels()
     //private val args: CommentFragmentArgs by navArgs()
 
@@ -31,10 +31,6 @@ class HomeFragment() : BaseFragment<FragmentHomeBinding, HomeViewModel>(), BookA
             viewModel.searchBook()
         }
         collectBooksInfo()
-    }
-
-    override fun deleteComment(info: Book) {
-        TODO("Not yet implemented")
     }
 
     private fun collectBooksInfo() {

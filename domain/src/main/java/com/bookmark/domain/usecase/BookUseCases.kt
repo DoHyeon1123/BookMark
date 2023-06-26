@@ -59,8 +59,8 @@ data class BookUseCases(
     val deleteReadingGoal: DeleteReadingGoal,
 
     // 나의 서재 기능 관련
-    val getBookInLibrary: SelectBookInLibrary,
-    val addBookInLibrary: InsertBookInLibrary,
+    val selectBookInLibrary: SelectBookInLibrary,
+    val insertBookInLibrary: InsertBookInLibrary,
     val deleteBookInLibrary: DeleteBookInLibrary,
 
     // 코멘트 기능 관련
