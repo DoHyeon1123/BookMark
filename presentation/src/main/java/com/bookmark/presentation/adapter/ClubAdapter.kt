@@ -14,7 +14,7 @@ class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book, Item
         fun addBook(info : Book)
     }
 
-    override fun action(item: Book, binding: ItemSearchResultBinding) {GI
+    override fun action(item: Book, binding: ItemSearchResultBinding) {
         binding.info = item
 
         Glide.with(binding.ivThumbnail)

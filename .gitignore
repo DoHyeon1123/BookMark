@@ -15,3 +15,5 @@
 local.properties
 
 di/src/main/java/com/bookmark/di/Constants.kt
+
+presentation/google-services.json
