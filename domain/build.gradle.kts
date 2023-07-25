@@ -38,8 +38,7 @@ android {
 }
 
 dependencies {
-    implementation(Libraries.di)
-    implementation(Libraries.async)
+    implementation(Libraries.common)
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)

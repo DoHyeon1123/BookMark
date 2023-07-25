@@ -15,6 +15,11 @@ object Libraries {
     private val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidX.NAVIGATION}"
     private val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.AndroidX.NAVIGATION}"
 
+    //Firebase
+    val firebase_bom = "com.google.firebase:firebase-bom:${Versions.Google.FIREBASE_BOM}"
+    private val firebase_analytics = "com.google.firebase:firebase-analytics-ktx"
+    private val firevase_database = "com.google.firebase:firebase-database-ktx"
+
     //Test
     private val junit = "junit:junit:${Versions.Test.JUNIT}"
 
@@ -44,16 +49,21 @@ object Libraries {
     private val roomKtx = "androidx.room:room-ktx:${Versions.AndroidX.ROOM}"
     private val roomRuntime = "androidx.room:room-runtime:${Versions.AndroidX.ROOM}"
 
-
-    val async = arrayListOf<String>().apply{
+    val common = arrayListOf<String>().apply {
         add(coroutines)
-    }
-
-    val di = arrayListOf<String>().apply {
         add(hilt)
     }
 
-    val app = arrayListOf<String>().apply {
+    val test = arrayListOf<String>().apply {
+        add(junit)
+    }
+
+    val androidTest = arrayListOf<String>().apply {
+        add(testJunit)
+        add(espresso)
+    }
+
+    val presentation = arrayListOf<String>().apply {
         add(coreKtx)
         add(appcompat)
         add(material)
@@ -65,21 +75,11 @@ object Libraries {
         add(constraintLayout)
     }
 
-    val test = arrayListOf<String>().apply{
-        add(junit)
-    }
-
-    val androidTest = arrayListOf<String>().apply{
-        add(testJunit)
-        add(espresso)
-    }
-
-    val room = arrayListOf<String>().apply {
+    val data = arrayListOf<String>().apply {
+        add(firebase_analytics)
+        add(firevase_database)
         add(roomKtx)
         add(roomRuntime)
-    }
-
-    val network = arrayListOf<String>().apply {
         add(retrofit)
         add(gsonConverter)
         add(okhttp3)

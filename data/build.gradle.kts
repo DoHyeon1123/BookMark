@@ -40,17 +40,15 @@ android {
 
 dependencies {
     implementation(project(":domain"))
+    implementation(platform(Libraries.firebase_bom))
 
-    implementation(Libraries.di)
-    implementation(Libraries.async)
-    implementation(Libraries.room)
-    implementation(Libraries.network)
+    implementation(Libraries.data)
+    implementation(Libraries.common)
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)
 
-    kapt(Libraries.hiltCompiler)
-    kapt(Libraries.roomCompiler)
+    kapt(Libraries.kapt)
 
 
 }

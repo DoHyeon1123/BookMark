@@ -15,6 +15,7 @@ object Versions {
     object Google {
         const val HILT = "2.44"
         const val MATERIAL = "1.8.0"
+        const val FIREBASE_BOM = "32.2.0"
     }
 
     object Test {

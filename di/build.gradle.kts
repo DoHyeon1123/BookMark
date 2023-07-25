@@ -44,8 +44,8 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
 
-    implementation(Libraries.di)
-    implementation(Libraries.network)
+    implementation(Libraries.common)
+    implementation(Libraries.data)
 
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)

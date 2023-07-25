@@ -51,14 +51,10 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":di"))
 
-    implementation(platform("com.google.firebase:firebase-bom:32.2.0"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
-
-    implementation(Libraries.app)
+    implementation(Libraries.presentation)
     testImplementation(Libraries.test)
     androidTestImplementation(Libraries.androidTest)
-    implementation(Libraries.di)
-    implementation(Libraries.async)
+    implementation(Libraries.common)
     kapt(Libraries.kapt)
 
 }
