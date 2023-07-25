@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.book.BookType
+import com.bookmark.domain.model.profile.User
 import com.bookmark.domain.usecase.BookUseCases
 import com.bookmark.presentation.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,6 +26,14 @@ class ProfileViewModel @Inject constructor(
     val profileUiState: StateFlow<ProfileUiState> = _profileUiState
 
     //TODO User 관련 data Logic 작성
+    fun getUserInfo() : User {
+
+    }
+
+    fun insertUserInfo() : User {
+        //TODO
+
+    }
 
     fun selectBookInLibrary() {
         viewModelScope.launch {

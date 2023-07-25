@@ -45,4 +45,16 @@ class ProfileFragment : BaseFragment<FragmentProfileBinding, ProfileViewModel>()
         }
     }
 
+    private fun setGoalDisplay(){
+        //TODO 목표 바 세팅
+    }
+
+    private fun setProfileInfo() {
+        with(viewModel){
+
+            mBinding.tvProfileName.text = ""
+
+        }
+    }
+
 }

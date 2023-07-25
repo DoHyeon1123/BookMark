@@ -1,5 +1,6 @@
 package com.bookmark.di
 
+import com.bookmark.data.datasource.AuthDataSource
 import com.bookmark.data.datasource.BookDataSource
 import com.bookmark.data.db.cache.BookCache
 import com.bookmark.data.network.remote.BookRemote
@@ -16,5 +17,11 @@ class DataSourceModule {
     @Provides
     fun provideBookDataSource(remote : BookRemote, cache :BookCache) : BookDataSource {
         return BookDataSource(remote, cache)
+    }
+
+    @Singleton
+    @Provides
+    fun provideAuthDataSource() : AuthDataSource {
+        return AuthDataSource()
     }
 }
