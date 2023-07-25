@@ -14,7 +14,7 @@ class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book, Item
         fun addBook(info : Book)
     }
 
-    override fun action(item: Book, binding: ItemSearchResultBinding) {
+    override fun action(item: Book, binding: ItemSearchResultBinding) {GI
         binding.info = item
 
         Glide.with(binding.ivThumbnail)
@@ -22,7 +22,6 @@ class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book, Item
             .centerCrop()
             .error(R.drawable.ic_book)
             .into(binding.ivThumbnail)
-
         binding.root.setOnClickListener {
             listener.addBook(item)
         }

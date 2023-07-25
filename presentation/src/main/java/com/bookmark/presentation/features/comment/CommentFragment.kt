@@ -24,7 +24,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CommentFragment() : Fragment(), BookAdapter.CallBack {
     private val viewModel : HomeViewModel by viewModels()
     private lateinit var binding : FragmentCommentBinding
-    private val adapter = BookAdapter(this)
+    private val adapter = BookAdapter()
 
 
     override fun onCreateView(
@@ -55,13 +55,6 @@ class CommentFragment() : Fragment(), BookAdapter.CallBack {
         }
 
         with(viewModel){
-            commentList.observe(
-                viewLifecycleOwner,
-                Observer<List<Comment>> {
-                    Log.e("LibraryFragment", it.toString())
-                    //adapter.submitList(it)
-                }
-            )
         }
     }
 

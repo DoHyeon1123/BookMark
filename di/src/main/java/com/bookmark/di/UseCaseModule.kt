@@ -56,7 +56,6 @@ class UseCaseModule {
             updateClub = UpdateClub(repository),
 
             // 책 정보
-            getBooks = GetBooks(repository),
             searchBooks = SearchBooks(repository),
 
             // 목표
