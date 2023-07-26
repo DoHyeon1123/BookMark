@@ -4,6 +4,8 @@ import com.bookmark.data.mapper.UserMapper
 import com.bookmark.domain.model.book.BookType
 import com.bookmark.domain.model.profile.User
 import com.bookmark.domain.usecase.main.books.SearchBooks
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import javax.inject.Inject
 
 class AuthDataSource @Inject constructor(
@@ -12,6 +14,8 @@ class AuthDataSource @Inject constructor(
     suspend fun getUserInfo(params : SearchBooks.Params) : User {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val myRef: DatabaseReference = database.getReference("users")
+
+        
         return mapper
     }
 
