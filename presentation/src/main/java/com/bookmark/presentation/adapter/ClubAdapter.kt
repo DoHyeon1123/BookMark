@@ -7,7 +7,7 @@ import com.bookmark.presentation.databinding.ItemSearchResultBinding
 import com.bumptech.glide.Glide
 
 class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book, ItemSearchResultBinding>(
-    R.layout.item_search_result,
+    R.layout.item_rcmd_book,
     ClubDiffUtilCallback ){
 
     interface CallBack{

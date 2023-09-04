@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 class AuthDataSource @Inject constructor(
 ){
-    private val mapper = UserMapper()
+    /*private val mapper = UserMapper()
     suspend fun getUserInfo(params : SearchBooks.Params) : User {
         val database: FirebaseDatabase = FirebaseDatabase.getInstance()
         val myRef: DatabaseReference = database.getReference("users")
@@ -25,5 +25,5 @@ class AuthDataSource @Inject constructor(
 
     suspend fun deleteBook(id : String) : User {
         return mapper
-    }
+    }*/
 }
