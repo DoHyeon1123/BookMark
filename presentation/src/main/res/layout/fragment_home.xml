@@ -43,13 +43,14 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_book_list"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="220dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/search_bar"
             android:orientation="horizontal"
-            tools:listitem="@layout/item_rcmd_book" />
+            tools:listitem="@layout/item_rcmd_book"
+            tools:itemCount="5"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
