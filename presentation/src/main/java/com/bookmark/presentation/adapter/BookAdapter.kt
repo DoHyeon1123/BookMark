@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 
 
 class BookAdapter() :  BaseListAdapter<Book, ItemSearchResultBinding>(
-    R.layout.item_rcmd_book,
+    R.layout.item_book_search,
     BookInfoDiffUtilCallback
 ){
 

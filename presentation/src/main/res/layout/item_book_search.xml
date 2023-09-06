@@ -12,15 +12,15 @@
         android:layout_width="150dp"
         android:layout_height="200dp"
         app:cardCornerRadius="8dp"
-        android:layout_margin="10dp">
+        android:layout_margin="8sp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            >
             <ImageView
                 android:id="@+id/iv_thumbnail"
-                tools:src="@mipmap/ic_launcher"
+                android:src="@drawable/img_book"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -28,30 +28,48 @@
                 android:layout_height="130dp" />
             <TextView
                 android:id="@+id/tv_title"
-                android:layout_width="130dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"
+                android:layout_marginHorizontal="10sp"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:ellipsize="end"
-                app:layout_constraintTop_toBottomOf="@id/iv_thumbnail"
                 android:layout_marginTop="4sp"
                 android:text="@={info.title}"
-                tools:text="책 제목" />
+                tools:text="책 제목"
+                android:maxLines="1" />
 
             <TextView
                 android:id="@+id/tv_author"
-                android:layout_width="130dp"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textSize="10sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title"
+                android:layout_marginHorizontal="10sp"
                 android:text="@={info.content}"
                 tools:text="글쓴이"
-                android:maxLines="5"
+                android:maxLines="1"
                 android:ellipsize = "end"/>
+
+            <TextView
+                android:id="@+id/tv_type_book"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                tools:text="#경제/금융"
+                android:orientation="horizontal"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tv_author"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginHorizontal="10sp"
+                android:maxLines="1"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

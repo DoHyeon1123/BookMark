@@ -15,7 +15,7 @@ class LibraryAdapter() :  BaseListAdapter<Book, ItemLibraryBinding>(
         Glide.with(binding.ivThumbnail)
             .load(item.image)
             .centerCrop()
-            .error(R.drawable.ic_book)
+            .error(R.drawable.img_book)
             .into(binding.ivThumbnail)
 
 

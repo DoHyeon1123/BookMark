@@ -7,7 +7,7 @@ import com.bookmark.presentation.databinding.ItemSearchResultBinding
 import com.bumptech.glide.Glide
 
 class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book, ItemSearchResultBinding>(
-    R.layout.item_rcmd_book,
+    R.layout.item_book_search,
     ClubDiffUtilCallback ){
 
     interface CallBack{
@@ -20,7 +20,7 @@ class ClubAdapter(private val listener : CallBack) :  BaseListAdapter<Book, Item
         Glide.with(binding.ivThumbnail)
             .load(item.image)
             .centerCrop()
-            .error(R.drawable.ic_book)
+            .error(R.drawable.img_book)
             .into(binding.ivThumbnail)
         binding.root.setOnClickListener {
             listener.addBook(item)
