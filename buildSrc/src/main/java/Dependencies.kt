@@ -14,6 +14,8 @@ object Libraries {
     private val glide = "com.github.bumptech.glide:glide:${Versions.ThirdParty.GLIDE}"
     private val navigationFragmentKtx = "androidx.navigation:navigation-fragment-ktx:${Versions.AndroidX.NAVIGATION}"
     private val navigationUiKtx = "androidx.navigation:navigation-ui-ktx:${Versions.AndroidX.NAVIGATION}"
+    private val circleImageView = "de.hdodenhof:circleimageview:3.1.0" //Circle ImageView
+    private val coordinatorlayout =  "androidx.coordinatorlayout:coordinatorlayout:1.1.0"
 
     //Firebase
     val firebase_bom = "com.google.firebase:firebase-bom:${Versions.Google.FIREBASE_BOM}"
@@ -73,6 +75,8 @@ object Libraries {
         add(navigationFragmentKtx)
         add(navigationUiKtx)
         add(constraintLayout)
+        add(circleImageView)
+        add(coordinatorlayout)
     }
 
     val data = arrayListOf<String>().apply {
