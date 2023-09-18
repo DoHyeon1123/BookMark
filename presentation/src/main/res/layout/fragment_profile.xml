@@ -11,7 +11,14 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/layout_profile"
@@ -19,16 +26,15 @@
                 android:layout_height="200dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                app:layout_constraintTop_toBottomOf="@id/toolbar">
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/iv_profile_image"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:layout_margin="10dp"
-                    android:background="@color/white"
+                    android:background="@android:color/transparent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     android:src = "@drawable/ic_profile"
                     app:civ_border_color="@color/main"
@@ -45,34 +51,39 @@
                     app:layout_constraintTop_toBottomOf="@id/iv_profile_image"
                     tools:text="사용자 이름" />
 
-                <ImageButton
-                    android:id="@+id/btn_social"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="8sp"
+                <TextView
+                    android:id="@+id/tv_profile_description"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    app:layout_constraintStart_toStartOf="@id/tv_profile_name"
                     app:layout_constraintTop_toBottomOf="@id/tv_profile_name"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/btn_challenge"
-                    />
-                <ImageButton
-                    android:id="@+id/btn_challenge"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="8sp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_profile_name"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    />
-                <ImageButton
-                    android:id="@+id/btn_setting"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="8sp"
-                    app:layout_constraintTop_toBottomOf="@id/tv_profile_name"
-                    app:layout_constraintStart_toEndOf="@id/btn_challenge"
-                    app:layout_constraintEnd_toEndOf="parent"
+                    tools:text="사용자 이름" />
 
-                    />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_social"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="8sp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_profile_description"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/btn_challenge"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="8sp"
+                    app:layout_constraintTop_toBottomOf="@id/btn_social"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    >
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cv_book_list"
@@ -82,26 +93,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
             >
-            <TextView
-                android:id="@+id/tv_book_read"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:text="나의 책장"
-                android:textSize="16sp"
-                android:textAlignment="center"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_book_list"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                tools:listitem="@layout/item_book_read"
+                tools:listitem="@layout/item_book_search"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_book_read" />
+                app:layout_constraintTop_toBottomOf="@id/tv_book_read"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

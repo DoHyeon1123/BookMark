@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bookmark.domain.model.book.Book
 import com.bookmark.domain.model.profile.Comment
@@ -28,7 +29,6 @@ class CommentFragment() : Fragment(), BookAdapter.CallBack {
 
 
     override fun onCreateView(
-
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,7 +40,8 @@ class CommentFragment() : Fragment(), BookAdapter.CallBack {
             false
         )
         binding.rvComment.adapter = adapter
-        binding.rvComment.layoutManager =LinearLayoutManager(requireContext(),LinearLayoutManager.VERTICAL,false)
+        binding.rvComment.layoutManager =
+            GridLayoutManager(requireContext(),3)
 
         return binding.root
     }

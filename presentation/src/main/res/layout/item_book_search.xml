@@ -8,15 +8,11 @@
             name="info"
             type="com.bookmark.domain.model.book.Book" />
     </data>
-    <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
-        android:layout_height="200dp"
-        app:cardCornerRadius="8dp"
-        android:layout_margin="8sp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:layout_margin="10dp"
             >
             <ImageView
                 android:id="@+id/iv_thumbnail"
@@ -24,8 +20,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="100dp"
-                android:layout_height="130dp" />
+                android:layout_width="75dp"
+                android:layout_height="100dp" />
             <TextView
                 android:id="@+id/tv_title"
                 android:layout_width="0dp"
@@ -73,8 +69,5 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-    </androidx.cardview.widget.CardView>
 
 </layout>
